@@ -52,7 +52,9 @@ void TFTPServer::sendError(int clientSocket, uint16_t errorCode, const std::stri
 }
 
 void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename, struct sockaddr_in clientAddress, int clientId) {
-    std::ifstream file(filename, std::ios::binary);
+    std::string directory = "serverDatabase/";
+    std::string filePath = directory + filename;
+    std::ifstream file(filePath, std::ios::binary);
     if (!file) {
         uint8_t packet[516];
         memset(packet, 0, sizeof(packet));
@@ -74,7 +76,7 @@ void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename
         memset(dataBuffer, 0, 512);
         // file.read(dataBuffer, 512);
         size_t dataSize = file.gcount();
-        dataSize = TFTPPacket::readDataBlock(filename, blockNumber, dataBuffer, dataSize);
+        dataSize = TFTPPacket::readDataBlock(filePath, blockNumber, dataBuffer, dataSize);
         if (dataSize == 0) {
             break; // End of file
         }
