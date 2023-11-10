@@ -1,0 +1,14 @@
+Server is started and waiting to recieve data
+start receiving data
+completed received data
+successfully receiving data
+buffer recieved
+Opcode:1
+filename:error.txt
+mode:octet
+Starting client thread
+Server is started and waiting to recieve data
+start receiving data
+Data Size: 264
+Acknoledment recieved
+Correct ACK packet recieved for blocknumber: 1

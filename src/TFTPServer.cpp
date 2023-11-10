@@ -24,34 +24,40 @@ TFTPServer::TFTPServer(int port) : port(port), nextClientId(1) {
 }
 
 
-void TFTPServer::handleRequest(int clientSocket, struct sockaddr_in clientAddress) {
-    char buffer[1024];
-    int bytesRead = recvfrom(clientSocket, buffer, sizeof(buffer), 0, nullptr, nullptr);
-    if (bytesRead < 0) {
-        std::cerr << "Error receiving data" << std::endl;
-        return;
-    }
+// void TFTPServer::handleRequest(int clientSocket, struct sockaddr_in clientAddress) {
+//     char buffer[1024];
+//     int bytesRead = recvfrom(clientSocket, buffer, sizeof(buffer), 0, nullptr, nullptr);
+//     if (bytesRead < 0) {
+//         std::cerr << "Error receiving data" << std::endl;
+//         return;
+//     }
 
-    // Extract the opcode from the received packet
-    uint16_t opcode = (buffer[0] << 8) | buffer[1];
+//     // Extract the opcode from the received packet
+//     uint16_t opcode = (buffer[0] << 8) | buffer[1];
 
-    // Handle RRQ request (Opcode 1)
-    if (opcode == 1) {
-        std::string filename(buffer + 2);
-        // handleReadRequest(clientSocket, filename, clientAddress);
-    }
-    // Handle WRQ request (Opcode 2)
-    else if (opcode == 2) {
-        std::string filename(buffer + 2);
-        // handleWriteRequest(clientSocket, filename, clientAddress);
-    }
-}
+//     // Handle RRQ request (Opcode 1)
+//     if (opcode == 1) {
+//         std::string filename(buffer + 2);
+//         // handleReadRequest(clientSocket, filename, clientAddress);
+//     }
+//     // Handle WRQ request (Opcode 2)
+//     else if (opcode == 2) {
+//         std::string filename(buffer + 2);
+//         // handleWriteRequest(clientSocket, filename, clientAddress);
+//     }
+// }
 
 void TFTPServer::handleWriteRequest(int clientSocket, const std::string& filename, struct sockaddr_in clientAddress, int clientId) {
     std::ofstream file(filename, std::ios::binary);
     if (!file) {
         // Send an error packet (Access violation - Error Code 2)
-        sendError(clientSocket, 2, "Access violation", clientAddress);
+        uint8_t packet[516];
+        memset(packet, 0, sizeof(packet));
+        const std::string errorMessage = "Access violation";
+        TFTPPacket::createErrorPacket(packet, 2, errorMessage);
+        packet[4 + errorMessage.size()] = '\0';
+        size_t packetSize = 4 + errorMessage.size() + 1;
+        sendto(clientSocket, packet, packetSize, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress));
         return;
     }
    
@@ -91,14 +97,18 @@ void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename
     uint16_t blockNumber = 1;
     char dataBuffer[512];
     while (true) {
-        file.read(dataBuffer, 512);
-        int dataSize = file.gcount();
+        uint8_t packet[516];
+        memset(packet, 0, sizeof(packet));
+        memset(dataBuffer, 0, 512);
+        // file.read(dataBuffer, 512);
+        size_t dataSize = file.gcount();
+        dataSize = TFTPPacket::readDataBlock(filename, blockNumber, dataBuffer, dataSize);
         if (dataSize == 0) {
             break; // End of file
         }
-
-        // Send data packet
-        sendData(clientSocket, dataBuffer, dataSize, clientAddress);
+        std::cerr << "Data Size: " << dataSize << std::endl;
+        TFTPPacket::createDataPacket(packet, blockNumber, dataBuffer, dataSize);
+        sendto(clientSocket, packet, dataSize + 4, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress));
 
         // Wait for acknowledgment
         char ackBuffer[4];
@@ -107,13 +117,26 @@ void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename
             std::cerr << "Error receiving acknowledgment" << std::endl;
             return;
         }
-
+        std::cerr << "Acknoledment recieved" <<std::endl;
         // Check the received acknowledgment packet (Opcode 4)
         uint16_t ackOpcode = (ackBuffer[0] << 8) | ackBuffer[1];
         uint16_t ackBlockNumber = (ackBuffer[2] << 8) | ackBuffer[3];
         if (ackOpcode != 4 || ackBlockNumber != blockNumber) {
             std::cerr << "Invalid acknowledgment received" << std::endl;
-            return;
+            uint8_t packet[516];
+            memset(packet, 0, sizeof(packet));
+            std::cerr << "Send an error packet Illegal TFTP operation - Error Code 2" << std::endl;
+            const std::string errorMessage = "Illegal TFTP operation";
+            TFTPPacket::createErrorPacket(packet, 2, errorMessage);
+            packet[4 + errorMessage.size()] = '\0';
+            size_t packetSize = 4 + errorMessage.size() + 1;
+            sendto(clientSocket, packet, packetSize, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress));
+            continue;
+        }
+        std::cerr<< "Correct ACK packet recieved for blocknumber: " << ackBlockNumber << std::endl;
+
+        if(dataSize < 512) {
+            break;
         }
 
         ++blockNumber;
@@ -166,8 +189,18 @@ void TFTPServer::handleClientThread(struct sockaddr_in clientAddress, int client
     else if (opcode == 2) {
         handleWriteRequest(serverThreadSocket, filename, clientAddress, clientId);
     }
+    else if(opcode == 6) {
+        // define new opcode 
+    }
     else {
-        // send error packet
+        uint8_t packet[516];
+        memset(packet, 0, sizeof(packet));
+        // Send an error packet (File not found - Error Code 1)
+        const std::string errorMessage = "Illegal TFTP operation";
+        TFTPPacket::createErrorPacket(packet, 4, errorMessage);
+        packet[4 + errorMessage.size()] = '\0';
+        size_t packetSize = 4 + errorMessage.size() + 1;
+        sendto(serverThreadSocket, packet, packetSize, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress));
     }
 
     // set destroy thread bool variable to true.
@@ -181,7 +214,7 @@ void TFTPServer::destroyClientThreads(std::map<int, std::tuple<std::thread, bool
 
 void TFTPServer::start() {
     // bindSocket();
-    while (true) {
+    while (!DESTROY_SERVER) {
         std::cerr << "Server is started and waiting to recieve data" << std::endl;
         struct sockaddr_in clientAddress;
         socklen_t clientAddrLen = sizeof(clientAddress);
@@ -212,6 +245,20 @@ void TFTPServer::start() {
             std::string mode(buffer + 2 + filename.length() + 1);
             std::cerr << "mode:" << mode << std::endl;
             std::cerr << "Starting client thread" << std::endl;
+            for (int i = 0; mode[i] != '\0'; i++) {
+                mode[i] = std::tolower(mode[i]);
+            }
+            if (mode != "octet"){
+                uint8_t packet[516];
+                memset(packet, 0, sizeof(packet));
+                // Send an error packet (File not found - Error Code 1)
+                const std::string errorMessage = "Illegal TFTP operation";
+                TFTPPacket::createErrorPacket(packet, 4, errorMessage);
+                packet[4 + errorMessage.size()] = '\0';
+                size_t packetSize = 4 + errorMessage.size() + 1;
+                sendto(serverSocket, packet, packetSize, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress));
+                continue;
+            }
             clientThreads[clientId] = std::make_tuple(std::thread([this, clientId, clientAddress, buffer, bytesRead, filename] {
                  int serverThreadSocket = socket(AF_INET, SOCK_DGRAM, 0);
                 struct sockaddr_in serverThreadSocketAddr;
@@ -231,10 +278,15 @@ void TFTPServer::start() {
             std::cerr << "Incorrect opcode recieved" << std::endl;
             // todo handle other opcodes condition also
             //send error packet
+            uint8_t packet[516];
+            memset(packet, 0, sizeof(packet));
+            // Send an error packet (File not found - Error Code 1)
+            const std::string errorMessage = "Illegal TFTP operation";
+            TFTPPacket::createErrorPacket(packet, 4, errorMessage);
+            packet[4 + errorMessage.size()] = '\0';
+            size_t packetSize = 4 + errorMessage.size() + 1;
+            sendto(serverSocket, packet, packetSize, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress));
             continue;
-        }
-        if(DESTROY_SERVER) {
-            break;
         }
     }
 }

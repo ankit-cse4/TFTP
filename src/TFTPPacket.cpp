@@ -31,7 +31,7 @@ void TFTPPacket::createWRQPacket(uint8_t* packet, const std::string& filename, c
     createRequestPacket(packet, 2, filename, mode);
 }
 
-void TFTPPacket::createDataPacket(uint8_t* packet, uint16_t blockNumber, const uint8_t* data, size_t dataSize) {
+void TFTPPacket::createDataPacket(uint8_t* packet, uint16_t blockNumber, const char* data, size_t dataSize) {
     // Create a DATA packet
     packet[0] = 0x00;
     packet[1] = 0x03;
@@ -64,14 +64,16 @@ void TFTPPacket::createErrorPacket(uint8_t* packet, uint16_t errorCode, const st
     }
 }
 
-void TFTPPacket::readDataBlock(const std::string& filename, uint16_t blockNumber, uint8_t* data, size_t& dataSize) {
+size_t TFTPPacket::readDataBlock(const std::string& filename, uint16_t blockNumber, char* data, size_t& dataSize) {
     // Read 512 bytes of data for the specified block number from the file
     std::ifstream file(filename, std::ios::binary);
     dataSize = 0;
 
     if (file.is_open()) {
         file.seekg((blockNumber - 1) * 512);
-        file.read(reinterpret_cast<char*>(data), 512);
+        file.read(data, 512);
         dataSize = file.gcount();
     }
+
+    return dataSize;
 }
