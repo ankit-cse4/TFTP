@@ -1,81 +1,51 @@
-// #include <iostream>
-// #include <string.h>
-// #include <errno.h>
-// #include <fstream>
-// #include <sstream>
-// #include <ostream>
+/* Packet Outlines
+[RRQ/WRQ Packet]
+2 bytes     string    1 byte   string    1 byte
+------------------------------------------------
+| Opcode |  Filename  |  0  |   Mode    |   0  |
+------------------------------------------------
 
-// #define		TFTP_OPCODE_RRQ		1
-// #define		TFTP_OPCODE_WRQ		2
-// #define		TFTP_OPCODE_DATA	3
-// #define		TFTP_OPCODE_ACK		4
-// #define		TFTP_OPCODE_ERROR	5
+[DATA Packet]
+2 bytes    2 bytes     n bytes
+---------------------------------
+| Opcode |  Block # |   Data    |
+---------------------------------
 
-// #define		TFTP_DEFAULT_TRANSFER_MODE		"octet"
+[ACK Packet]
+2 bytes    2 bytes
+---------------------
+| Opcode |  Block # |
+---------------------
 
-// #define NOT_CONNECTED 0
-// #define CONNECTED 1
-
-// #define ACK_WAITING 0
-// #define ACK_OK 1
-
-// /* Error Codes */
-// #define ERROR_NOT_DEFINED 0
-// #define ERROR_FILE_NOT_FOUND 1
-// #define ERROR_ACCESS_VIOLATION 2
-// #define ERROR_DISK_FULL 3
-// #define ERROR_ILLEGAL_TFTP_OPERATION 4
-// #define ERROR_UNKNOWN_TID 5
-// #define ERROR_FILE_ALREADY_EXISTS 6
-// #define ERROR_NO_SUCH_USER 7
-
-// /* Packet Outlines
- 
-// [RRQ/WRQ Packet]
-// 2 bytes     string    1 byte   string    1 byte
-// ------------------------------------------------
-// | Opcode |  Filename  |  0  |   Mode    |   0  |
-// ------------------------------------------------
-
-// [DATA Packet]
-// 2 bytes    2 bytes     n bytes
-// ---------------------------------
-// | Opcode |  Block # |   Data    |
-// ---------------------------------
-
-// [ACK Packet]
-// 2 bytes    2 bytes
-// ---------------------
-// | Opcode |  Block # |
-// ---------------------
-
-// [ERROR Packet]
-// 2 bytes    2 bytes     string    1 byte
-// -----------------------------------------
-// | Opcode | ErrorCode |  ErrMsg  |   0   |
-// -----------------------------------------
-// */
-
-// class TFTPPacket{
-//   private:
-//     int packet_size;
-//     unsigned char data[516];
-
-//   public:
-//     TFTPPacket();
-//     void printData();
-//     int createRRQPacket(char* filename);
-//     int createWRQPacket(char* filename);
-//     int createACKPacket(int packet_id);
-//     int createDATAPacket(int block, char* data, int dataSize);
-//     int createERRORPacket(int error_code, char* errorMsg);
-
-// };
-
+[ERROR Packet]
+2 bytes    2 bytes     string    1 byte
+-----------------------------------------
+| Opcode | ErrorCode |  ErrMsg  |   0   |
+-----------------------------------------
+*/
 
 
 #ifndef TFTP_PACKET_H
 #define TFTP_PACKET_H
+
+
+#define		TFTP_OPCODE_RRQ		1
+#define		TFTP_OPCODE_WRQ		2
+#define		TFTP_OPCODE_DATA	3
+#define		TFTP_OPCODE_ACK		4
+#define		TFTP_OPCODE_ERROR	5
+
+#define		TFTP_DEFAULT_TRANSFER_MODE		"octet"
+
+/* Error Codes */
+#define ERROR_NOT_DEFINED 0
+#define ERROR_FILE_NOT_FOUND 1
+#define ERROR_ACCESS_VIOLATION 2
+#define ERROR_DISK_FULL 3
+#define ERROR_ILLEGAL_TFTP_OPERATION 4
+#define ERROR_UNKNOWN_TID 5
+#define ERROR_FILE_ALREADY_EXISTS 6
+#define ERROR_NO_SUCH_USER 7
 
 #include <string>
 #include <cstdint>
