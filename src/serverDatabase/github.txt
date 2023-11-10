@@ -1,0 +1,65 @@
+https://github.com/delp/TFTP-Server/blob/master/src/parseTFTPPacket.h
+
+https://github.com/ankitkotak93/TCP-tftp/blob/master/server.cpp
+
+https://github.com/jasmeet13n/TFTP-Server
+
+https://github.com/YeltsinMartin/TFTPServer/blob/main/Server.cpp
+
+https://github.com/l2yyd5/l_tftp/blob/main/src/TFTPClient.cpp
+
+https://github.com/sai-sv/tftp/blob/master/tftp_client.cpp
+
+https://github.com/gaplin/tftp/blob/master/client.cpp
+
+https://github.com/Francis-Rockwell/TFTP/blob/main/Homework/tftp/server.cpp
+
+https://github.com/thedavekwon/simple-tftp/blob/master/src/tftp_server.cpp
+
+https://github.com/milo-trujillo/tftpd
+
+https://github.com/SamuelZKQ/My_TFTP/blob/main/MyTFTP/myclient.cpp
+
+https://github.com/alokedip20/TFTP_Client/blob/master/tftp_client.cpp
+
+https://github.com/arvindkumarrao/TFTP
+
+https://github.com/dongxinb/MyTFTP/blob/master/MyServer/MyServer.cpp
+
+https://github.com/vilius/tftp -------complete
+
+https://github.com/amit-mittal/TFTP
+
+https://github.com/madmartin/atftp - advanced
+
+https://github.com/cguimaraes/ssTFTP -  in java
+
+https://github.com/schwankner/TFTPClient
+
+https://github.com/dembanakh/ServerClientTFTP
+
+https://github.com/rambodrahmani/tftp -  no WRQ implemented
+
+
+
+https://github.com/xlphs/TFTP/blob/master/mytftp.c
+
+https://github.com/mdlayher/tftp -- implemented in go
+
+
+https://github.com/J-F-Sebastian/tftp --search result page12
+
+https://github.com/JamieMZhang/TFTP --in java must read the readme.txt file
+
+
+https://github.com/alokedip20/TFTP_Client  ---only client
+
+
+https://github.com/ryanwhite92/python_tftp  -- server only in python
+
+
+
+https://github.com/Qsiv/TFTP-Server --only server in c++ but ability to list the contents of a directory
+
+https://github.com/Yeyoon/tftpServer/blob/master/TftpServer/TftpServer.cpp
+
