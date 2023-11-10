@@ -24,29 +24,6 @@ TFTPServer::TFTPServer(int port) : port(port), nextClientId(1) {
 }
 
 
-// void TFTPServer::handleRequest(int clientSocket, struct sockaddr_in clientAddress) {
-//     char buffer[1024];
-//     int bytesRead = recvfrom(clientSocket, buffer, sizeof(buffer), 0, nullptr, nullptr);
-//     if (bytesRead < 0) {
-//         std::cerr << "Error receiving data" << std::endl;
-//         return;
-//     }
-
-//     // Extract the opcode from the received packet
-//     uint16_t opcode = (buffer[0] << 8) | buffer[1];
-
-//     // Handle RRQ request (Opcode 1)
-//     if (opcode == 1) {
-//         std::string filename(buffer + 2);
-//         // handleReadRequest(clientSocket, filename, clientAddress);
-//     }
-//     // Handle WRQ request (Opcode 2)
-//     else if (opcode == 2) {
-//         std::string filename(buffer + 2);
-//         // handleWriteRequest(clientSocket, filename, clientAddress);
-//     }
-// }
-
 void TFTPServer::handleWriteRequest(int clientSocket, const std::string& filename, struct sockaddr_in clientAddress, int clientId) {
     std::ofstream file(filename, std::ios::binary);
     if (!file) {
