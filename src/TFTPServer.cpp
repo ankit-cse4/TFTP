@@ -44,15 +44,10 @@ void TFTPServer::handleWriteRequest(int clientSocket, const std::string& filenam
 }
 
 void TFTPServer::sendError(int clientSocket, uint16_t errorCode, const std::string& errorMsg, struct sockaddr_in clientAddress) {
-    uint16_t opcode = 5; // ERROR opcode
-    char packet[4 + errorMsg.size() + 1];
-    packet[0] = opcode >> 8;
-    packet[1] = opcode;
-    packet[2] = errorCode >> 8;
-    packet[3] = errorCode;
-    strcpy(packet + 4, errorMsg.c_str());
+    // uint16_t opcode = 5; // ERROR opcode
+    uint8_t packet[4 + errorMsg.size() + 1];
+    TFTPPacket::createErrorPacket(packet, errorCode, errorMsg);
     packet[4 + errorMsg.size()] = '\0';
-
     sendto(clientSocket, packet, 4 + errorMsg.size() + 1, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress));
 }
 
@@ -136,13 +131,9 @@ void TFTPServer::sendData(int clientSocket, const char* data, int dataSize, stru
 }
 
 void TFTPServer::sendACK(int clientSocket, uint16_t blockNumber, struct sockaddr_in clientAddress) {
-    uint16_t opcode = 4; // ACK opcode
-    char packet[4];
-    packet[0] = opcode >> 8;
-    packet[1] = opcode;
-    packet[2] = blockNumber >> 8;
-    packet[3] = blockNumber;
-
+    // uint16_t opcode = 4; // ACK opcode
+    uint8_t packet[4];
+    TFTPPacket::createACKPacket(packet, blockNumber);
     sendto(clientSocket, packet, 4, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress));
 }
 
@@ -255,14 +246,16 @@ void TFTPServer::start() {
             std::cerr << "Incorrect opcode recieved" << std::endl;
             // todo handle other opcodes condition also
             //send error packet
-            uint8_t packet[516];
-            memset(packet, 0, sizeof(packet));
-            // Send an error packet (File not found - Error Code 1)
+            // uint8_t packet[516];
+            // memset(packet, 0, sizeof(packet));
+            // // Send an error packet (File not found - Error Code 1)
             const std::string errorMessage = "Illegal TFTP operation";
-            TFTPPacket::createErrorPacket(packet, 4, errorMessage);
-            packet[4 + errorMessage.size()] = '\0';
-            size_t packetSize = 4 + errorMessage.size() + 1;
-            sendto(serverSocket, packet, packetSize, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress));
+            // TFTPPacket::createErrorPacket(packet, 4, errorMessage);
+            // packet[4 + errorMessage.size()] = '\0';
+            // size_t packetSize = 4 + errorMessage.size() + 1;
+            // sendto(serverSocket, packet, packetSize, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress));
+            sendError(serverSocket, 4, errorMessage, clientAddress);
+            
             continue;
         }
     }
