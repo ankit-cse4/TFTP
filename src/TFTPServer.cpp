@@ -217,23 +217,34 @@ void TFTPServer::destroyClientThreads(std::map<int, std::tuple<std::thread, bool
 }
 
 void TFTPServer::start() {
+    std::cerr << "Server is started and waiting to recieve data" << std::endl;
     // bindSocket();
+    struct timeval timeout;
+    timeout.tv_sec = 5;  // seconds
+    timeout.tv_usec = 0; // microseconds
     while (!DESTROY_SERVER) {
-        std::cerr << "Server is started and waiting to recieve data" << std::endl;
+        if (setsockopt(serverSocket, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeout, sizeof(timeout)) < 0) {
+            std::cerr << "Error setting receive timeout" << std::endl;
+            break;
+        }
         struct sockaddr_in clientAddress;
         socklen_t clientAddrLen = sizeof(clientAddress);
         char buffer[1024];
         memset(buffer, 0, sizeof(buffer));
         std::cerr << "start receiving data" << std::endl;
         int bytesRead = recvfrom(serverSocket, buffer, sizeof(buffer), 0, (struct sockaddr*)&clientAddress, &clientAddrLen);
-        std::cerr << "completed received data" << std::endl;
-        if (bytesRead < 0 || bytesRead > 516) {
+        if (bytesRead < 0) {
+            std::cerr << "Timeout Occured while listening" << std::endl;
+            continue;
+        }
+        else if (bytesRead > 516) {
             std::cerr << "Error receiving data" << std::endl;
             const std::string errorMessage = "Illegal TFTP operation";
             sendError(serverSocket, ERROR_ILLEGAL_TFTP_OPERATION, errorMessage, clientAddress);
             continue;
         }
-        std::cerr << "buffer recieved" << std::endl;
+        std::cerr << "completed received data" << std::endl;
+        // std::cerr << "buffer recieved" << std::endl;
 
         // Extract the opcode from the received packet
         uint16_t opcode = (uint16_t)(((buffer[1] & 0xFF) << 8) | (buffer[0] & 0XFF));
@@ -281,6 +292,15 @@ void TFTPServer::start() {
             continue;
         }
     }
+
+    if(DESTROY_SERVER) {
+        std::cerr << "Shutting Down Server...." << std::endl;
+    }
+    else {
+        std::cerr << "Error Occured. Force shutdown server" << std::endl;
+    }
+
+
 }
 
 
