@@ -84,11 +84,11 @@ class TFTPPacket {
 public:
     static void createRRQPacket(uint8_t* packet, const std::string& filename, const std::string& mode);
     static void createWRQPacket(uint8_t* packet, const std::string& filename, const std::string& mode);
-    static void createDataPacket(uint8_t* packet, uint16_t blockNumber, const uint8_t* data, size_t dataSize);
+    static void createDataPacket(uint8_t* packet, uint16_t blockNumber, const char* data, size_t dataSize);
     static void createACKPacket(uint8_t* packet, uint16_t blockNumber);
     static void createErrorPacket(uint8_t* packet, uint16_t errorCode, const std::string& errorMsg);
 
-    static void readDataBlock(const std::string& filename, uint16_t blockNumber, uint8_t* data, size_t& dataSize);
+    static size_t readDataBlock(const std::string& filename, uint16_t blockNumber, char* data, size_t& dataSize);
 
 private:
     static void createRequestPacket(uint8_t* packet, uint16_t opcode, const std::string& filename, const std::string& mode);
