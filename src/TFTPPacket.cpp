@@ -24,11 +24,11 @@ void TFTPPacket::createRequestPacket(uint8_t* packet, uint16_t opcode, const std
 }
 
 void TFTPPacket::createRRQPacket(uint8_t* packet, const std::string& filename, const std::string& mode) {
-    createRequestPacket(packet, 1, filename, mode);
+    createRequestPacket(packet, TFTP_OPCODE_RRQ, filename, mode);
 }
 
 void TFTPPacket::createWRQPacket(uint8_t* packet, const std::string& filename, const std::string& mode) {
-    createRequestPacket(packet, 2, filename, mode);
+    createRequestPacket(packet, TFTP_OPCODE_WRQ, filename, mode);
 }
 
 void TFTPPacket::createDataPacket(uint8_t* packet, uint16_t blockNumber, const char* data, size_t dataSize) {
