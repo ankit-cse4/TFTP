@@ -27,9 +27,9 @@ private:
     int serverPort;
     int clientSocket;
     bool handleRRQRequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename);
-    bool sendRRQPacket(int clientSocket, struct sockaddr_in serverAddress);
+    bool sendRRQPacket(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename);
     bool handleWRQRequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename);
-    bool sendWRQPacket(int clientSocket, struct sockaddr_in serverAddress);
+    bool sendWRQPacket(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename);
     bool handleLSRequest(int clientSocket, struct sockaddr_in serverAddress);
     bool sendLSPacket(int clientSocket, struct sockaddr_in serverAddress);
     bool handleDELETERequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename);
