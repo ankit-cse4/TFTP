@@ -27,14 +27,14 @@ TFTPServer::TFTPServer(int port) : port(port), nextClientId(1) {
 void TFTPServer::handleWriteRequest(int clientSocket, const std::string& filename, struct sockaddr_in clientAddress, int clientId, std::map<std::string, int>& files) {
     std::string directory = "serverDatabase/";
     std::string filePath = directory + filename;
-    std::ofstream file(filePath, std::ios::binary); 
     if (fileExists(filename, files)) {
         // Send an error packet (File already exists. - Error Code 6)
         const std::string errorMessage = "File already exists.";
         sendError(clientSocket, ERROR_FILE_ALREADY_EXISTS, errorMessage, clientAddress);
         return;
     }
-    else if (!file) {
+    std::ofstream file(filePath, std::ios::binary); 
+    if (!file) {
         // Send an error packet (Disk full or allocation exceeded - Error Code 3)
         const std::string errorMessage = "Disk full or allocation exceeded.";
         sendError(clientSocket, ERROR_DISK_FULL, errorMessage, clientAddress);
@@ -222,15 +222,18 @@ void TFTPServer::handleClientThread(int serverThreadSocket, const std::string& f
     }
 
     // Handle RRQ request (Opcode 1)
-    if (opcode == 1) {
+    if (opcode == TFTP_OPCODE_RRQ) {
         handleReadRequest(serverThreadSocket, filename, clientAddress, clientId, files);
     }
     // Handle WRQ request (Opcode 2)
-    else if (opcode == 2) {
+    else if (opcode == TFTP_OPCODE_WRQ) {
         handleWriteRequest(serverThreadSocket, filename, clientAddress, clientId, files);
     }
-    else if(opcode == 6) {
-        // define new opcode 
+    else if(opcode == TFTP_OPCODE_DELETE) {
+        handleDeleteRequest(serverThreadSocket, filename, clientAddress, clientId, files); 
+    }
+    else if (opcode == TFTP_OPCODE_LS) {
+        // handle the list files
     }
     else {
         // Send an error packet (Illegal TFTP operation - Error Code 4)
