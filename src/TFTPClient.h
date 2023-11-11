@@ -4,7 +4,9 @@
 #include <string>
 #include "TFTPPacket.h"
 #include <netinet/in.h>
+#include <arpa/inet.h>
 #include <filesystem>
+#include <fstream>
 
 
 #define SERVER_DEFAULT_PORT     69
@@ -24,15 +26,14 @@ private:
     std::string serverIP;
     int serverPort;
     int clientSocket;
-    void sendReadRequest(const std::string& filename);
+    bool handleRRQRequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename);
+    bool sendRRQPacket(int clientSocket, struct sockaddr_in serverAddress);
+    bool handleWRQRequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename);
+    bool sendWRQPacket(int clientSocket, struct sockaddr_in serverAddress);
     bool handleLSRequest(int clientSocket, struct sockaddr_in serverAddress);
     bool sendLSPacket(int clientSocket, struct sockaddr_in serverAddress);
     bool handleDELETERequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename);
     bool sendDELETEPacket(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename);
-    void receiveData();
-    bool sendWriteRequest(const std::string& filename);
-    bool receiveAck(int& blockNumber);
-    bool receiveError(std::string& errorMsg);
     void sendACK(int clientSocket, uint16_t blockNumber, struct sockaddr_in serverAddress);
     void sendError(int clientSocket, uint16_t errorCode, const std::string& errorMsg, struct sockaddr_in clientAddress);
 };
