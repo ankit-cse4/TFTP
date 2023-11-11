@@ -47,20 +47,25 @@ void TFTPServer::handleWriteRequest(int clientSocket, const std::string& filenam
     memset(recievedBuffer, 0, sizeof(recievedBuffer));
     sendACK(clientSocket, blockNumber, clientAddress);
     uint16_t expectedBlockNumber = 1;
-    while (true)
+    int retry = MAX_RETRY;
+    while (retry)
     {
         int readBytes = recvfrom(clientSocket, recievedBuffer, sizeof(recievedBuffer), 0, nullptr, nullptr);
         if (readBytes < 0) {
-            std::cerr << "Error receiving data" << std::endl;
+            std::cerr << "TIMEOUT occured" << std::endl;
+            retry--;
             continue;
         }
         else if (readBytes > 516)
         {
-            /* code logic */
-            std::cerr << "Incorrect packet Recieved" << std::endl;
+            std::cerr << "Illegal Packet Recieved" << std::endl;
+            std::string errorMessage = "Illegal TFTP operation";
+            sendError(clientSocket, ERROR_ILLEGAL_TFTP_OPERATION, errorMessage, clientAddress);
             continue;
         }
-        
+        else {
+            retry = MAX_RETRY;
+        }
         // check for correct clientaddress and client port
 
         // Extract the opcode from the received packet
@@ -89,7 +94,7 @@ void TFTPServer::handleWriteRequest(int clientSocket, const std::string& filenam
         std::cerr << "Copying data memory" << std::endl;
         memcpy(recvData, recievedBuffer + 4, dataLength);
         std::cerr << "Recieved data size: " << dataLength << std::endl;
-        std::cerr << "Received Data: " << std::endl << std::endl << recvData << std::endl;
+        // std::cerr << "Received Data: " << std::endl << std::endl << recvData << std::endl;
         std::cerr << "Writing data in file" << std::endl;
         file.write(reinterpret_cast<char*>(recvData), dataLength);
         if (file.fail())
@@ -107,6 +112,11 @@ void TFTPServer::handleWriteRequest(int clientSocket, const std::string& filenam
     }
     // TODO: Handle the write operation
     file.close();
+    if (!retry)
+    {
+        std::cerr << "Max retry for receiving timeout exceeded. Shutting down server" << std::endl;
+    }
+    
 }
 
 void TFTPServer::sendError(int clientSocket, uint16_t errorCode, const std::string& errorMsg, struct sockaddr_in clientAddress) {
@@ -134,7 +144,8 @@ void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename
     // Read and send data in blocks of 512 bytes
     uint16_t blockNumber = 1;
     char dataBuffer[512];
-    while (true) {
+    int retry = MAX_RETRY;
+    while (retry) {
         uint8_t packet[516];
         memset(packet, 0, sizeof(packet));
         memset(dataBuffer, 0, 512);
@@ -151,8 +162,18 @@ void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename
         char ackBuffer[4];
         int ackSize = recvfrom(clientSocket, ackBuffer, sizeof(ackBuffer), 0, nullptr, nullptr);
         if (ackSize < 0) {
-            std::cerr << "Error receiving acknowledgment" << std::endl;
-            return;
+            std::cerr << "TIMEOUT Occured" << std::endl;
+            retry--;
+            continue;
+        }
+        else if (ackSize > MAX_PACKET_SIZE) {
+            std::cerr << "Invalid acknowledgment received" << std::endl;
+            const std::string errorMessage = "Illegal TFTP operation";
+            sendError(clientSocket, ERROR_ACCESS_VIOLATION, errorMessage, clientAddress);
+            continue;
+        }
+        else {
+            retry = MAX_RETRY;
         }
         std::cerr << "Acknoledment recieved" <<std::endl;
         // Check the received acknowledgment packet (Opcode 4)
@@ -174,6 +195,10 @@ void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename
     }
 
     file.close();
+    if (!retry)
+    {
+        std::cerr << "Max retry for receiving timeout exceeded. Shutting down server" << std::endl;
+    }
 }
 
 
@@ -188,6 +213,14 @@ void TFTPServer::sendACK(int clientSocket, uint16_t blockNumber, struct sockaddr
 }
 
 void TFTPServer::handleClientThread(int serverThreadSocket, const std::string& filename, struct sockaddr_in clientAddress,  int clientId, uint16_t opcode, std::map<int, std::tuple<std::thread, bool>>& clientThreads) {
+
+    struct timeval timeout;
+    timeout.tv_sec = 5;  // seconds
+    timeout.tv_usec = 0; // microseconds
+    if (setsockopt(serverThreadSocket, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeout, sizeof(timeout)) < 0) {
+        std::cerr << "Error setting receive timeout" << std::endl;
+        return;
+    }
 
     // Handle RRQ request (Opcode 1)
     if (opcode == 1) {
@@ -213,16 +246,79 @@ void TFTPServer::handleClientThread(int serverThreadSocket, const std::string& f
 }
 
 void TFTPServer::destroyClientThreads(std::map<int, std::tuple<std::thread, bool>>& clientThreads){
+    std::cerr << "[LOG]: destroy client thread started" << std::endl;
+    std::vector<int> keyToDelete;
+    // Sleep for 30 seconds
+    while(!destroyTFTPServer){
+        std::this_thread::sleep_for(std::chrono::seconds(15));
+        for (auto& pair : clientThreads) {
+            int key = pair.first;
+            auto& threadTuple = pair.second;
+            if (std::get<1>(threadTuple))
+            {
+                // Join the thread
+                std::get<0>(threadTuple).join();
+                std::cerr << " joined Thread ID: " << key << std::endl;
+                // clientThreads.erase(key);
+                keyToDelete.push_back(key);
+            }
+        }
+        for(int value : keyToDelete){
+            auto it = clientThreads.find(value);
+            if (it != clientThreads.end()) {
+                clientThreads.erase(it);
+                std::cerr << "Removed the thread id from Map: " << value << std::endl;
+            }
+        }
+        keyToDelete.clear();
+    }
+    for (auto& pair : clientThreads) {
+        int key = pair.first;
+        auto& threadTuple = pair.second;
+        // Join the thread
+        std::get<0>(threadTuple).join();
+        std::cerr << " joined Thread ID: " << key << std::endl;
+    }
+    clientThreads.clear();
+    std::cerr << "All threads joined" << std::endl;
+}
 
+void TFTPServer::destroyTFTP(int signum, siginfo_t* info, void* ptr) {
+    char ans = '0';
+shutdown_prompt:
+	std::cout << "tftp> Would you like to shutdown the Server? (y/n): ";
+	std::cin >> ans;
+	switch(ans){
+		case 'n':
+			return;
+		case 'y':
+			break;
+		default:
+			goto shutdown_prompt;
+	}
+    std::cout << "Shutting Down the TFTP server" << std::endl;
+    destroyTFTPServer = true;
+    return;
 }
 
 void TFTPServer::start() {
+    destroyTFTPServer = DESTROY_SERVER;
+    std::thread destroyThread([this] {
+        destroyClientThreads(clientThreads);
+    });
+    struct sigaction act;
+	memset(&act,0,sizeof(act));
+	act.sa_handler = SIG_IGN;
+	act.sa_flags = SA_SIGINFO;
+	act.sa_sigaction = &destroyTFTPHandler;
+	sigaction(SIGINT, &act, NULL);
+
     std::cerr << "Server is started and waiting to recieve data" << std::endl;
     // bindSocket();
     struct timeval timeout;
     timeout.tv_sec = 5;  // seconds
     timeout.tv_usec = 0; // microseconds
-    while (!DESTROY_SERVER) {
+    while (!destroyTFTPServer) {
         if (setsockopt(serverSocket, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeout, sizeof(timeout)) < 0) {
             std::cerr << "Error setting receive timeout" << std::endl;
             break;
@@ -292,21 +388,34 @@ void TFTPServer::start() {
             continue;
         }
     }
-
-    if(DESTROY_SERVER) {
+    if(destroyTFTPServer) {
         std::cerr << "Shutting Down Server...." << std::endl;
     }
     else {
         std::cerr << "Error Occured. Force shutdown server" << std::endl;
     }
-
-
+    std::cerr << "All threads joined" << std::endl;
+    destroyThread.join();
+    std::cerr << "destroy threads thread joined" << std::endl;
+    std::cerr << "Server shut down process completed" << std::endl;
+    kill(getpid(),SIGTERM);
 }
 
+void TFTPServer::destroyTFTPHandler(int signo, siginfo_t* info, void* context) {
+    // Forward the call to an instance of the class
+    staticInstance->destroyTFTP(signo, info, context);
+}
+
+TFTPServer*& TFTPServer::getStaticInstance() {
+    return staticInstance;
+}
+
+TFTPServer* TFTPServer::staticInstance = nullptr;
 
 int main() {
     std :: cout << "starting the server" << std::endl;
     TFTPServer server(54534);
+    TFTPServer::getStaticInstance() = &server;
     std :: cout << "initialized the server" << std::endl;
     // start a thread that will destroy threads, pass the map as argument, 
     server.start();
