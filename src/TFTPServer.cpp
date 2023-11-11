@@ -24,21 +24,20 @@ TFTPServer::TFTPServer(int port) : port(port), nextClientId(1) {
 }
 
 
-void TFTPServer::handleWriteRequest(int clientSocket, const std::string& filename, struct sockaddr_in clientAddress, int clientId) {
+void TFTPServer::handleWriteRequest(int clientSocket, const std::string& filename, struct sockaddr_in clientAddress, int clientId, std::map<std::string, int>& files) {
     std::string directory = "serverDatabase/";
     std::string filePath = directory + filename;
-    std::ofstream file(filePath, std::ios::binary);
-    bool fileExist = false; 
-    if (!file) {
-        // Send an error packet (Disk full or allocation exceeded - Error Code 3)
-        const std::string errorMessage = "Disk full or allocation exceeded.";
-        sendError(clientSocket, ERROR_DISK_FULL, errorMessage, clientAddress);
-        return;
-    }
-    else if (fileExist) {
+    std::ofstream file(filePath, std::ios::binary); 
+    if (fileExists(filename, files)) {
         // Send an error packet (File already exists. - Error Code 6)
         const std::string errorMessage = "File already exists.";
         sendError(clientSocket, ERROR_FILE_ALREADY_EXISTS, errorMessage, clientAddress);
+        return;
+    }
+    else if (!file) {
+        // Send an error packet (Disk full or allocation exceeded - Error Code 3)
+        const std::string errorMessage = "Disk full or allocation exceeded.";
+        sendError(clientSocket, ERROR_DISK_FULL, errorMessage, clientAddress);
         return;
     }
 
@@ -130,11 +129,11 @@ void TFTPServer::sendError(int clientSocket, uint16_t errorCode, const std::stri
     std::cerr << "[LOG] : Error packet send to client " << clientAddress.sin_addr.s_addr << " with error code: " << errorCode << std::endl;
 }
 
-void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename, struct sockaddr_in clientAddress, int clientId) {
+void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename, struct sockaddr_in clientAddress, int clientId, std::map<std::string, int>& files) {
     std::string directory = "serverDatabase/";
     std::string filePath = directory + filename;
     std::ifstream file(filePath, std::ios::binary);
-    if (!file) {
+    if (!fileExists(filename, files)) {
         // Send an error packet (File not found - Error Code 1)
         const std::string errorMessage = "File not found";
         sendError(clientSocket, ERROR_FILE_NOT_FOUND, errorMessage, clientAddress);
@@ -212,7 +211,7 @@ void TFTPServer::sendACK(int clientSocket, uint16_t blockNumber, struct sockaddr
     std::cerr << "[LOG] : ACK packet send to client " << clientAddress.sin_addr.s_addr << " with Block Number: " << blockNumber << std::endl;
 }
 
-void TFTPServer::handleClientThread(int serverThreadSocket, const std::string& filename, struct sockaddr_in clientAddress,  int clientId, uint16_t opcode, std::map<int, std::tuple<std::thread, bool>>& clientThreads) {
+void TFTPServer::handleClientThread(int serverThreadSocket, const std::string& filename, struct sockaddr_in clientAddress,  int clientId, uint16_t opcode, std::map<int, std::tuple<std::thread, bool>>& clientThreads, std::map<std::string, int>& files) {
 
     struct timeval timeout;
     timeout.tv_sec = 5;  // seconds
@@ -224,11 +223,11 @@ void TFTPServer::handleClientThread(int serverThreadSocket, const std::string& f
 
     // Handle RRQ request (Opcode 1)
     if (opcode == 1) {
-        handleReadRequest(serverThreadSocket, filename, clientAddress, clientId);
+        handleReadRequest(serverThreadSocket, filename, clientAddress, clientId, files);
     }
     // Handle WRQ request (Opcode 2)
     else if (opcode == 2) {
-        handleWriteRequest(serverThreadSocket, filename, clientAddress, clientId);
+        handleWriteRequest(serverThreadSocket, filename, clientAddress, clientId, files);
     }
     else if(opcode == 6) {
         // define new opcode 
@@ -313,6 +312,8 @@ void TFTPServer::start() {
 	act.sa_sigaction = &destroyTFTPHandler;
 	sigaction(SIGINT, &act, NULL);
 
+    initializeFileMap(files);
+
     std::cerr << "Server is started and waiting to recieve data" << std::endl;
     // bindSocket();
     struct timeval timeout;
@@ -376,7 +377,7 @@ void TFTPServer::start() {
                     exit(1);
                 }
                 std::cout << "Server binded to port " << clientId << std::endl;
-                handleClientThread(serverThreadSocket, filename, clientAddress, clientId, opcode, clientThreads);
+                handleClientThread(serverThreadSocket, filename, clientAddress, clientId, opcode, clientThreads, files);
                 
             }), false);
             
@@ -411,6 +412,86 @@ TFTPServer*& TFTPServer::getStaticInstance() {
 }
 
 TFTPServer* TFTPServer::staticInstance = nullptr;
+
+void TFTPServer::initializeFileMap(std::map<std::string, int>& files) {
+    std::string directoryPath = "serverDatabase";
+    std::cerr << "Initializing files in the File Map" << std::endl;
+    for (const auto& entry : fs::directory_iterator(directoryPath)) {
+        if (entry.is_regular_file()) {
+            files.insert(std::make_pair(entry.path().filename().string(), 0));
+            // files.push_back(entry.path().filename().string());
+        }
+    }
+    std::cerr << "Initialized files in the map" << std::endl;
+    for (const auto& pair : files) {
+        std::cerr << "FILE NAME: " << pair.first << ", READERS: " << pair.second << std::endl;
+    }
+}
+
+bool TFTPServer::fileExists(const std::string& filename, std::map<std::string, int>& files) {
+    auto it = files.find(filename);
+    if(it != files.end()) {
+        std::cerr << filename << " exists in the server database" << std::endl;
+        return true;
+    }
+    else {
+        std::cerr << filename << " does not exists in the server database" << std::endl;
+        return false;
+    }
+}
+
+
+bool TFTPServer::canDelete(const std::string& filename, std::map<std::string, int>& files) {
+    auto it = files.find(filename);
+    if(it == files.end()) {
+        std::cerr << filename << " does not exists in the server database" << std::endl;
+        return false;
+    }
+
+    if (files[filename] == 0){
+        std::cerr << filename << " has no active readers" << std::endl;
+        return true;
+    }
+    else {
+        std::cerr << filename << " has active readers. Can not delete." << std::endl;
+        return false;
+    }
+}
+
+void TFTPServer::handleDeleteRequest(int clientSocket, const std::string& filename, struct sockaddr_in clientAddress,  int clientId, std::map<std::string, int>& files) {
+    if (!fileExists(filename, files)){
+        // send error regarding file not exists.
+        const std::string errorMessage = "File not found";
+        sendError(clientSocket, ERROR_FILE_NOT_FOUND, errorMessage, clientAddress);
+        return;
+    }
+    else if (canDelete(filename, files)) {
+        //send error regarding active readers. cannot delete file.
+        const std::string errorMessage = "File has active readers. Cannot delete file.";
+        sendError(clientSocket, ERROR_NOT_DEFINED, errorMessage, clientAddress);
+        return;
+    }
+    std::string directory = "serverDatabase/";
+    std::string filePath = directory + filename;
+    try {
+        // Check if the file exists before attempting to delete
+        if (fs::exists(filePath)) {
+            fs::remove(filePath);
+            std::cout << "File deleted successfully.\n";
+            // send ack that file deleted succesfully.
+            sendACK(clientSocket, ACK_OK, clientAddress);
+        } else {
+            const std::string errorMessage = "File not found";
+            sendError(clientSocket, ERROR_FILE_NOT_FOUND, errorMessage, clientAddress);
+            return;
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        const std::string errorMessage = "Exception Occured. cannot delete file";
+        sendError(clientSocket, ERROR_NOT_DEFINED, errorMessage, clientAddress);
+        return;
+    }
+}
 
 int main() {
     std :: cout << "starting the server" << std::endl;

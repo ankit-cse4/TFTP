@@ -35,6 +35,7 @@
 #define		TFTP_OPCODE_ACK		4
 #define		TFTP_OPCODE_ERROR	5
 #define     MAX_PACKET_SIZE     516
+#define     ACK_OK              0
 
 #define		TFTP_DEFAULT_TRANSFER_MODE		"octet"
 
