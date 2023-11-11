@@ -22,6 +22,18 @@
 -----------------------------------------
 | Opcode | ErrorCode |  ErrMsg  |   0   |
 -----------------------------------------
+
+[DELETE Packet]
+2 bytes     string    1 byte   
+-----------------------------
+| Opcode |  Filename  |  0  |
+-----------------------------
+
+[LS Packet]
+2 bytes    1 bytes
+---------------------
+| Opcode |  0 |
+---------------------
 */
 
 
@@ -61,6 +73,8 @@ public:
     static void createDataPacket(uint8_t* packet, uint16_t blockNumber, const char* data, size_t dataSize);
     static void createACKPacket(uint8_t* packet, uint16_t blockNumber);
     static void createErrorPacket(uint8_t* packet, uint16_t errorCode, const std::string& errorMsg);
+    static void createDeletePacket(uint8_t* packet, const std::string& filename);
+    static void createLSPacket(uint8_t* packet);
 
     static size_t readDataBlock(const std::string& filename, uint16_t blockNumber, char* data, size_t& dataSize);
 

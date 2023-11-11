@@ -99,8 +99,10 @@ void TFTPServer::handleWriteRequest(int clientSocket, const std::string& filenam
         if (file.fail())
         {
             std::cerr << "File write error" << std::endl;
+            const std::string errorMessage = "Disk full or allocation exceeded.";
+            sendError(clientSocket, ERROR_DISK_FULL, errorMessage, clientAddress);
             // code logic for rewrite.
-            continue;
+            break;
         }
         sendACK(clientSocket, expectedBlockNumber, clientAddress);
         expectedBlockNumber++;
@@ -353,21 +355,23 @@ void TFTPServer::start() {
 
 
         // Handle RRQ request (Opcode 1)
-        if (opcode == TFTP_OPCODE_RRQ || opcode == TFTP_OPCODE_WRQ) {
+        if (opcode == TFTP_OPCODE_RRQ || opcode == TFTP_OPCODE_WRQ || opcode == TFTP_OPCODE_DELETE) {
             int clientId = 9800 + nextClientId++;
             std::string filename(buffer + 2);
             std::cerr << "filename:" << filename << std::endl;
-            std::string mode(buffer + 2 + filename.length() + 1);
-            std::cerr << "mode:" << mode << std::endl;
-            std::cerr << "Starting client thread" << std::endl;
-            for (int i = 0; mode[i] != '\0'; i++) {
-                mode[i] = std::tolower(mode[i]);
-            }
-            if (mode != "octet"){
-                // Send an error packet (File not found - Error Code 1)
-                const std::string errorMessage = "Illegal TFTP operation";
-                sendError(serverSocket, ERROR_ILLEGAL_TFTP_OPERATION, errorMessage, clientAddress);
-                continue;
+            if (opcode != TFTP_OPCODE_DELETE){   
+                std::string mode(buffer + 2 + filename.length() + 1);
+                std::cerr << "mode:" << mode << std::endl;
+                std::cerr << "Starting client thread" << std::endl;
+                for (int i = 0; mode[i] != '\0'; i++) {
+                    mode[i] = std::tolower(mode[i]);
+                }
+                if (mode != "octet"){
+                    // Send an error packet (File not found - Error Code 1)
+                    const std::string errorMessage = "Illegal TFTP operation";
+                    sendError(serverSocket, ERROR_ILLEGAL_TFTP_OPERATION, errorMessage, clientAddress);
+                    continue;
+                }
             }
             clientThreads[clientId] = std::make_tuple(std::thread([this, clientId, clientAddress, buffer, bytesRead, filename, opcode] {
                  int serverThreadSocket = socket(AF_INET, SOCK_DGRAM, 0);
