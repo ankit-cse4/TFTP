@@ -2,6 +2,7 @@
 #define TFTP_CLIENT_H
 
 #include <string>
+#include "TFTPPacket.h"
 #include <netinet/in.h>
 
 class TFTPClient {
