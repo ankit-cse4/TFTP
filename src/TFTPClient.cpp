@@ -5,33 +5,30 @@
 #include <unistd.h>
 
 
-// using namespace std;
 
-
-// to solve store result of huffman encode in  binary format and then make changes in decode function 
-// how to store map 
-
-
-//plag
 
 
 
 
 TFTPClient::TFTPClient(const std::string& serverIP) {
+    // Create a UDP socket
     clientSocket = socket(AF_INET, SOCK_DGRAM, 0);
     if (clientSocket < 0) {
         std::cerr << "Error creating client socket" << std::endl;
         exit(1);
     }
+    // Configure the server address
     struct sockaddr_in serverAddress;
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_addr.s_addr = inet_addr(serverIP.c_str());
     serverAddress.sin_port = htons(SERVER_DEFAULT_PORT);
 
+    // Set a timeout for socket operations
     struct timeval timeout;
     timeout.tv_sec = 5;  // seconds
     timeout.tv_usec = 0; // microseconds
 
+    // Connect to the server (optional, but can be useful for a connection-oriented protocol)
     if (setsockopt(clientSocket, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeout, sizeof(timeout)) < 0) {
             std::cerr << "Error setting receive timeout" << std::endl;
             exit(1);
@@ -40,7 +37,16 @@ TFTPClient::TFTPClient(const std::string& serverIP) {
 
 }
 
-
+/**
+ * @brief Sends a List (LS) packet to the TFTP server.
+ *
+ * This function constructs an LS packet using the TFTPPacket::createLSPacket method
+ * and sends it to the specified server address using the provided client socket.
+ *
+ * @param clientSocket The socket descriptor for communication with the server.
+ * @param serverAddress The server's sockaddr_in structure containing the IP address and port.
+ * @return true if the LS packet is successfully sent, false otherwise.
+ */
 bool TFTPClient::sendLSPacket(int clientSocket, struct sockaddr_in serverAddress){
     uint8_t packet[3];
     TFTPPacket::createLSPacket(packet);
@@ -51,6 +57,19 @@ bool TFTPClient::sendLSPacket(int clientSocket, struct sockaddr_in serverAddress
     std::cerr << "[LOG] : LS packet send to server " << serverAddress.sin_addr.s_addr << std::endl;
     return true;
 }
+
+
+/**
+ * @brief Sends a DELETE packet to the TFTP server.
+ *
+ * This function constructs a DELETE packet using the TFTPPacket::createDeletePacket method,
+ * including the specified filename, and sends it to the server using the provided client socket.
+ *
+ * @param clientSocket The socket descriptor for communication with the server.
+ * @param serverAddress The server's sockaddr_in structure containing the IP address and port.
+ * @param filename The name of the file to be deleted.
+ * @return true if the DELETE packet is successfully sent, false otherwise.
+ */
 
 bool TFTPClient::sendDELETEPacket(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename){
     std::string mode = "octet";
@@ -71,6 +90,16 @@ bool TFTPClient::sendDELETEPacket(int clientSocket, struct sockaddr_in serverAdd
     return true;
 }
 
+
+/**
+ * @brief Starts the TFTP client with the specified operation and filename.
+ *
+ * This function initializes the client's socket, binds it to a default port, and
+ * communicates with the TFTP server based on the provided operation code (opcode) and filename.
+ *
+ * @param opcode The TFTP operation code (e.g., TFTP_OPCODE_LS, TFTP_OPCODE_DELETE, etc.).
+ * @param filename The name of the file associated with the operation.
+ */
 void TFTPClient::startClient(int opcode, const std::string& filename) {
     struct sockaddr_in clientAddress;
     clientAddress.sin_family = AF_INET;
@@ -135,6 +164,18 @@ void TFTPClient::startClient(int opcode, const std::string& filename) {
     return;
 }
 
+
+/**
+ * @brief Handles Read Request (RRQ) operation with the TFTP server.
+ *
+ * This function sends a RRQ packet to the TFTP server, receives data blocks,
+ * writes the data to a file, and performs decompression on the received file.
+ *
+ * @param clientSocket The socket descriptor for communication with the server.
+ * @param serverAddress The server's sockaddr_in structure containing the IP address and port.
+ * @param prevFilename The original filename associated with the RRQ request.
+ * @return true if the RRQ operation is successful, false otherwise.
+ */
 bool TFTPClient::handleRRQRequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& prevFilename) {
     if (prevFilename.empty())
     {
@@ -289,6 +330,20 @@ bool TFTPClient::handleRRQRequest(int clientSocket, struct sockaddr_in serverAdd
     return false;
 }
 
+
+/**
+ * @brief Sends a Read Request (RRQ) packet to the TFTP server.
+ *
+ * This function constructs a RRQ packet using the TFTPPacket::createRRQPacket method,
+ * including the specified filename and transfer mode, and sends it to the server using
+ * the provided client socket and server address.
+ *
+ * @param clientSocket The socket descriptor for communication with the server.
+ * @param serverAddress The server's sockaddr_in structure containing the IP address and port.
+ * @param filename The name of the file to be requested.
+ * @return true if the RRQ packet is successfully sent, false otherwise.
+ */
+
 bool TFTPClient::sendRRQPacket(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename) {
     std::string mode = "octet";
     uint8_t packet[4 + filename.size() + mode.size()];
@@ -308,6 +363,18 @@ bool TFTPClient::sendRRQPacket(int clientSocket, struct sockaddr_in serverAddres
     return true;
 }
 
+
+/**
+ * @brief Handles Write Request (WRQ) operation with the TFTP server.
+ *
+ * This function compresses the specified file, sends a WRQ packet to the TFTP server,
+ * receives ACK packets, and sends data packets to write the compressed file on the server.
+ *
+ * @param clientSocket The socket descriptor for communication with the server.
+ * @param serverAddress The server's sockaddr_in structure containing the IP address and port.
+ * @param prevFilename The original filename associated with the WRQ request.
+ * @return true if the WRQ operation is successful, false otherwise.
+ */
 bool TFTPClient::handleWRQRequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& prevFilename) {
     if (prevFilename.empty())
     {
@@ -464,6 +531,20 @@ bool TFTPClient::handleWRQRequest(int clientSocket, struct sockaddr_in serverAdd
 
 }
 
+
+/**
+ * @brief Sends a Write Request (WRQ) packet to the TFTP server.
+ *
+ * This function constructs a WRQ packet using the TFTPPacket::createWRQPacket method,
+ * including the specified filename and transfer mode, and sends it to the server using
+ * the provided client socket and server address.
+ *
+ * @param clientSocket The socket descriptor for communication with the server.
+ * @param serverAddress The server's sockaddr_in structure containing the IP address and port.
+ * @param filename The name of the file to be written.
+ * @return true if the WRQ packet is successfully sent, false otherwise.
+ */
+
 bool TFTPClient::sendWRQPacket(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename) {
     std::string mode = "octet";
     uint8_t packet[4 + filename.size() + mode.size()];
@@ -476,6 +557,20 @@ bool TFTPClient::sendWRQPacket(int clientSocket, struct sockaddr_in serverAddres
     return true;
 }
 
+
+/**
+ * @brief Sends an error packet to the TFTP server.
+ *
+ * This function constructs an error packet using the TFTPPacket::createErrorPacket method,
+ * including the specified error code and error message, and sends it to the server using
+ * the provided client socket and server address.
+ *
+ * @param clientSocket The socket descriptor for communication with the server.
+ * @param errorCode The TFTP error code.
+ * @param errorMsg The error message associated with the error code.
+ * @param serverAddress The server's sockaddr_in structure containing the IP address and port.
+ */
+
 void TFTPClient::sendError(int clientSocket, uint16_t errorCode, const std::string& errorMsg, struct sockaddr_in serverAddress) {
     uint8_t packet[4 + errorMsg.size() + 1];
     TFTPPacket::createErrorPacket(packet, errorCode, errorMsg);
@@ -487,6 +582,20 @@ void TFTPClient::sendError(int clientSocket, uint16_t errorCode, const std::stri
     std::cerr << "[LOG] : Error packet send to server " << serverAddress.sin_addr.s_addr << " with error code: " << errorCode << std::endl;
 }
 
+
+
+/**
+ * @brief Handles a DELETE request by sending a DELETE packet to the TFTP server and handling the server's response.
+ *
+ * This function takes a filename, constructs a DELETE packet using the sendDELETEPacket method,
+ * sends it to the server using the provided client socket and server address, and then processes
+ * the server's response, checking for acknowledgments (ACK) or error packets.
+ *
+ * @param clientSocket The socket descriptor for communication with the server.
+ * @param serverAddress The server's sockaddr_in structure containing the IP address and port.
+ * @param filename The name of the file to be deleted.
+ * @return true if the DELETE request is successful, false otherwise.
+ */
 bool TFTPClient::handleDELETERequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename) {
     if (filename.empty())
     {
@@ -574,6 +683,20 @@ bool TFTPClient::handleDELETERequest(int clientSocket, struct sockaddr_in server
     return false;
 }
 
+
+
+/**
+ * @brief Handles a DELETE request by sending a DELETE packet to the TFTP server and handling the server's response.
+ *
+ * This function takes a filename, constructs a DELETE packet using the sendDELETEPacket method,
+ * sends it to the server using the provided client socket and server address, and then processes
+ * the server's response, checking for acknowledgments (ACK) or error packets.
+ *
+ * @param clientSocket The socket descriptor for communication with the server.
+ * @param serverAddress The server's sockaddr_in structure containing the IP address and port.
+ * @param filename The name of the file to be deleted.
+ * @return true if the DELETE request is successful, false otherwise.
+ */
 bool TFTPClient::handleLSRequest(int clientSocket, struct sockaddr_in serverAddress) {
     if (!sendLSPacket(clientSocket, serverAddress)) {
         std::cerr << "[ERROR] : fail to send LS packet" << std::endl;
@@ -682,6 +805,17 @@ bool TFTPClient::handleLSRequest(int clientSocket, struct sockaddr_in serverAddr
     return success;
 }
 
+
+/**
+ * @brief Sends an ACK (Acknowledgment) packet to the TFTP server for the specified block number.
+ *
+ * This function creates and sends an ACK packet with the given block number to the server. It retries the sending process
+ * up to 5 times in case of failure. If the ACK packet is sent successfully, the function logs the event and returns.
+ *
+ * @param clientSocket The socket descriptor for communication with the server.
+ * @param blockNumber The block number for which the ACK packet is being sent.
+ * @param serverAddress The server's sockaddr_in structure containing the IP address and port.
+ */
 void TFTPClient::sendACK(int clientSocket, uint16_t blockNumber, struct sockaddr_in serverAddress) {
     uint8_t packet[4];
     TFTPPacket::createACKPacket(packet, blockNumber);
