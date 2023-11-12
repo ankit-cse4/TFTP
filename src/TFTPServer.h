@@ -35,6 +35,7 @@ private:
     void handleClientThread(int serverThreadSocket, const std::string& filename, struct sockaddr_in clientAddress,  int clientId, uint16_t opcode, std::map<int, std::tuple<std::thread, bool>>& clientThreads, std::map<std::string, int>& files);
     void destroyClientThreads(std::map<int, std::tuple<std::thread, bool>>& clientThreads);
     void handleDeleteRequest(int clientSocket, const std::string& filename, struct sockaddr_in clientAddress,  int clientId, std::map<std::string, int>& files);
+    void handleLSRequest(int clientSocket, struct sockaddr_in clientAddress,  int clientId, std::map<std::string, int>& files);
     void destroyTFTP(int signum, siginfo_t* info, void* ptr);
     bool fileExists(const std::string& filename, std::map<std::string, int>& files);
     bool canDelete(const std::string& filename, std::map<std::string, int>& files);

@@ -1,12 +1,12 @@
 #include "TFTPPacket.h"
 #include <fstream>
 #include <cstring>
+#include <iostream>
 
 void TFTPPacket::createRequestPacket(uint8_t* packet, uint16_t opcode, const std::string& filename, const std::string& mode) {
-    // Create a RRQ or WRQ packet
-    packet[0] = (opcode >> 8) & 0xFF;
-    packet[1] = opcode & 0xFF;
-
+    // // Create a RRQ or WRQ packet
+    // packet[0] = (opcode >> 8) & 0xFF;
+    // packet[1] = opcode & 0xFF;
     size_t index = 2;
     for (char c : filename) {
         packet[index++] = static_cast<uint8_t>(c);
@@ -14,20 +14,26 @@ void TFTPPacket::createRequestPacket(uint8_t* packet, uint16_t opcode, const std
             break;
         }
     }
-
+    packet[index++] = 0x00;
     for (char c : mode) {
         packet[index++] = static_cast<uint8_t>(c);
         if (c == '\0') {
             break;
         }
     }
+    packet[index++] = 0x00;
 }
 
 void TFTPPacket::createRRQPacket(uint8_t* packet, const std::string& filename, const std::string& mode) {
+    packet[0] = 0x00;
+    packet[1] = 0x01;
+    // std::cerr << std::hex << static_cast<uint8_t>(packet[0]) << std::hex << static_cast<uint8_t>(packet[0]) << std::endl;
     createRequestPacket(packet, TFTP_OPCODE_RRQ, filename, mode);
 }
 
 void TFTPPacket::createWRQPacket(uint8_t* packet, const std::string& filename, const std::string& mode) {
+    packet[0] = 0x00;
+    packet[1] = 0x02;
     createRequestPacket(packet, TFTP_OPCODE_WRQ, filename, mode);
 }
 
@@ -67,13 +73,8 @@ void TFTPPacket::createErrorPacket(uint8_t* packet, uint16_t errorCode, const st
 void TFTPPacket::createDeletePacket(uint8_t* packet, const std::string& filename) {
     packet[0] = 0x00;
     packet[1] = 0x06;
-    size_t index = 2;
-    for (char c : filename) {
-        packet[index++] = static_cast<uint8_t>(c);
-        if (c == '\0') {
-            break;
-        }
-    }
+    std::string mode = "octet";
+    createRequestPacket(packet, TFTP_OPCODE_DELETE, filename, mode);
 }
 
 void TFTPPacket::createLSPacket(uint8_t* packet) {

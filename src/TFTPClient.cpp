@@ -30,18 +30,26 @@ TFTPClient::TFTPClient(const std::string& serverIP) {
 bool TFTPClient::sendLSPacket(int clientSocket, struct sockaddr_in serverAddress){
     uint8_t packet[3];
     TFTPPacket::createLSPacket(packet);
-    if (sendto(clientSocket, packet, TFTP_OPCODE_ACK, 0, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) < 0) {
-        std::cerr << "[ERROR] : fail to send ACK packet" << std::endl;
+    if (sendto(clientSocket, packet, sizeof(packet), 0, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) < 0) {
+        std::cerr << "[ERROR] : fail to send LS packet" << std::endl;
         return false;
     }
-    std::cerr << "[LOG] : LS packet send to delete " << serverAddress.sin_addr.s_addr << std::endl;
+    std::cerr << "[LOG] : LS packet send to server " << serverAddress.sin_addr.s_addr << std::endl;
     return true;
 }
 
 bool TFTPClient::sendDELETEPacket(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename){
-    uint8_t packet[2 + filename.size() + 1];
+    std::string mode = "octet";
+    uint8_t packet[4 + filename.size() + mode.size()];
+    std::cerr << "filename: " << filename << std::endl;
     TFTPPacket::createDeletePacket(packet, filename);
-    if (sendto(clientSocket, packet, TFTP_OPCODE_ACK, 0, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) < 0) {
+    std::cerr << "Packet content: ";
+    std::cerr << std::hex << static_cast<uint8_t>(packet[0]) << std::hex << static_cast<uint8_t>(packet[0]);
+    for (std::size_t i = 2; i < sizeof(packet); ++i) {
+        std::cerr << packet[i];
+    }
+    std::cerr << std::endl;
+    if (sendto(clientSocket, packet, sizeof(packet), 0, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) < 0) {
         std::cerr << "[ERROR] : fail to send Delete packet" << std::endl;
         return false;
     }
@@ -62,8 +70,8 @@ void TFTPClient::startClient(int opcode, const std::string& filename) {
     std::cout << "client binded to port " << CLIENT_DEFAULT_PORT << std::endl;
     struct sockaddr_in serverAddress;
     serverAddress.sin_family = AF_INET;
-    serverAddress.sin_addr.s_addr = inet_addr(serverIP.c_str());
-    serverAddress.sin_port = htons(SERVER_DEFAULT_PORT);
+    serverAddress.sin_addr.s_addr = inet_addr("127.0.0.1");
+    serverAddress.sin_port = htons(54534);
 
     // implemented logic for handling client according to opcode
     switch (opcode)
@@ -144,7 +152,7 @@ bool TFTPClient::handleRRQRequest(int clientSocket, struct sockaddr_in serverAdd
     {
         struct sockaddr_in recvAddress;
         socklen_t recvAddressLen = sizeof(recvAddress);
-        int readBytes = recvfrom(clientSocket, recievedBuffer, sizeof(recievedBuffer), 0, (struct sockaddr*)&recvAddress, &recvAddressLen);
+        int readBytes = recvfrom(clientSocket, recievedBuffer, 516, 0, (struct sockaddr*)&recvAddress, &recvAddressLen);
         if (readBytes < 0)
         {
             std::cerr << "TIMEOUT Occured" << std::endl;
@@ -250,7 +258,14 @@ bool TFTPClient::sendRRQPacket(int clientSocket, struct sockaddr_in serverAddres
     std::string mode = "octet";
     uint8_t packet[4 + filename.size() + mode.size()];
     TFTPPacket::createRRQPacket(packet, filename, mode);
-    if (sendto(clientSocket, packet, TFTP_OPCODE_ACK, 0, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) < 0) {
+    std::cerr << "RRQ Packet created successfully of size: " << sizeof(packet) << std::endl; 
+    std::cerr << "Packet content: ";
+    std::cerr << std::hex << static_cast<uint8_t>(packet[0]) << std::hex << static_cast<uint8_t>(packet[0]);
+    for (std::size_t i = 2; i < sizeof(packet); ++i) {
+        std::cerr << packet[i];
+    }
+    std::cerr << std::endl;
+    if (sendto(clientSocket, packet, sizeof(packet), 0, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) < 0) {
         std::cerr << "[ERROR] : fail to send RRQ request packet" << std::endl;
         return false;
     }
@@ -467,7 +482,7 @@ bool TFTPClient::handleDELETERequest(int clientSocket, struct sockaddr_in server
             retry = MAX_RETRY;
         }
         std::cerr << "Received data" << std::endl;
-        if (recvAddress.sin_addr.s_addr != inet_addr(serverIP.c_str()))
+        if (recvAddress.sin_addr.s_addr != serverAddress.sin_addr.s_addr)
         {
             std::cerr << "Corrupt packet from different IP received" << std::endl;
             const std::string errorMessage = "Unknown transfer ID";
@@ -478,15 +493,26 @@ bool TFTPClient::handleDELETERequest(int clientSocket, struct sockaddr_in server
         opcode = ntohs(opcode);
         std::cerr << "Recieved Opcode:" << opcode << std::endl;
 
-        if (opcode != TFTP_OPCODE_ERROR || opcode != TFTP_OPCODE_ACK) {
+        if (opcode != TFTP_OPCODE_ERROR && opcode != TFTP_OPCODE_ACK) {
             std::cerr << "Illegal Opcode Recieved" << std::endl;
             std::string errorMessage = "Illegal TFTP operation";
             sendError(clientSocket, ERROR_ILLEGAL_TFTP_OPERATION, errorMessage, recvAddress);
-            continue;
+            return false;
         }
         std::cerr << "Read Bytes: " << readBytes << std::endl;
         uint16_t recvBlockNumber = (uint16_t)(((recievedBuffer[3] & 0xFF) << 8) | (recievedBuffer[2] & 0XFF));
         recvBlockNumber = ntohs(recvBlockNumber);
+        if (opcode == TFTP_OPCODE_ACK)
+        {
+            std::cerr << "ACK recieved" << std::endl;
+            if (recvBlockNumber == ACK_OK) 
+            {
+                std::cout << "ACK OK Recieved." << std::endl;
+                return true;
+            }
+            std::cerr << "[ERROR] Incorrect ACK recieved with code: " << recvBlockNumber << std::endl;
+            return false;
+        }
         if (opcode == TFTP_OPCODE_ERROR)
         {
             std::cerr << "Error packet recieved from server with error code: " << recvBlockNumber << std::endl;
@@ -498,17 +524,6 @@ bool TFTPClient::handleDELETERequest(int clientSocket, struct sockaddr_in server
             std::cerr << "Recieved data size: " << dataLength << std::endl;
             std::cerr << "[ERROR " << recvBlockNumber << "] " << recvData << std::endl;
             std::cout << "[ERROR " << recvBlockNumber << "] " << recvData << std::endl;
-            return false;
-        }
-        if (opcode == TFTP_OPCODE_ACK)
-        {
-            std::cerr << "ACK recieved" << std::endl;
-            if (recvBlockNumber == ACK_OK) 
-            {
-                std::cout << "ACK OK Recieved." << std::endl;
-                return true;
-            }
-            std::cerr << "[ERROR] Incorrect ACK recieved with code: " << recvBlockNumber << std::endl;
             return false;
         }
         
@@ -559,7 +574,7 @@ bool TFTPClient::handleLSRequest(int clientSocket, struct sockaddr_in serverAddr
             retry = MAX_RETRY;
         }
         std::cerr << "Received data" << std::endl;
-        if (recvAddress.sin_addr.s_addr != inet_addr(serverIP.c_str()))
+        if (recvAddress.sin_addr.s_addr != serverAddress.sin_addr.s_addr)
         {
             std::cerr << "Corrupt packet from different IP received" << std::endl;
             const std::string errorMessage = "Unknown transfer ID";
@@ -576,15 +591,16 @@ bool TFTPClient::handleLSRequest(int clientSocket, struct sockaddr_in serverAddr
             std::cerr << "Illegal Opcode Recieved" << std::endl;
             std::string errorMessage = "Illegal TFTP operation";
             sendError(clientSocket, ERROR_ILLEGAL_TFTP_OPERATION, errorMessage, recvAddress);
-            continue;
+            return false;
         }
         uint16_t recvBlockNumber = (uint16_t)(((recievedBuffer[3] & 0xFF) << 8) | (recievedBuffer[2] & 0XFF));
         recvBlockNumber = ntohs(recvBlockNumber);
         std::cerr << "Recieved Block Number:" << recvBlockNumber << std::endl;
         if (recvBlockNumber != expectedBlockNumber) {
             std::cerr << "Incorrect Block Number Recieved" << std::endl;
-            std::string errorMessage = "Incorrect Block Number Recieved. Resend";
-            sendError(clientSocket, ERROR_NOT_DEFINED, errorMessage, recvAddress);
+            // std::string errorMessage = "Incorrect Block Number Recieved. Resend";
+            // sendError(clientSocket, ERROR_NOT_DEFINED, errorMessage, recvAddress);
+            // return false;
             continue;
         }
         std::cerr << "Read Bytes: " << readBytes << std::endl;
@@ -600,6 +616,8 @@ bool TFTPClient::handleLSRequest(int clientSocket, struct sockaddr_in serverAddr
         if (file.fail())
         {
             std::cerr << "File write error" << std::endl;
+            const std::string errorMessage = "Disk full or allocation exceeded.";
+            sendError(clientSocket, ERROR_DISK_FULL, errorMessage, serverAddress);
             // code logic for rewrite.
             break;
         }
@@ -675,9 +693,11 @@ int main(int argc, char* argv[]){
         default:
             std::cerr << "[ERROR] TFTP Client : Invalid Request Type { READ | WRITE | DELETE | LS }";
             std::cout << "TFTP Client : Invalid Request Type { READ | WRITE | DELETE | LS }";
-            break;
+            exit(1);
     }
 
     TFTPClient client(serverIP);
     client.startClient(opcode, filename);
+
+    return 1;
 }
