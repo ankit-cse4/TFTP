@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/gtest.dir/mnt/c/ThisWindow/Repos/SSL/Assignment3/TFTP/src/TFTPPacket.cpp.o CMakeFiles/gtest.dir/Tester.cpp.o CMakeFiles/gtest.dir/main.cpp.o -o gtest  -lgmock /usr/local/lib/libgtest.a 

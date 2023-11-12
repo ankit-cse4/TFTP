@@ -1,0 +1,4 @@
+/mnt/c/ThisWindow/Repos/SSL/Assignment3/TFTP/gtest/build/CMakeFiles/gtest.dir
+/mnt/c/ThisWindow/Repos/SSL/Assignment3/TFTP/gtest/build/CMakeFiles/test.dir
+/mnt/c/ThisWindow/Repos/SSL/Assignment3/TFTP/gtest/build/CMakeFiles/edit_cache.dir
+/mnt/c/ThisWindow/Repos/SSL/Assignment3/TFTP/gtest/build/CMakeFiles/rebuild_cache.dir
