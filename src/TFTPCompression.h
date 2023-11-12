@@ -23,4 +23,5 @@ std::map<char, std::string> generateHuffmanCodes(std::vector<long> &A, std::vect
 void deflate(std::string filename);
 void inflate(std::string filename, std::map<char, std::string> result, std::string opFilename);
 
+
 #endif

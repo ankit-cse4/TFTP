@@ -1,22 +1,32 @@
 #include "TFTPCompression.h"
+
+/**
+ * @brief Read a binary file and write its binary content to a text file.
+ *
+ * This function opens a binary file specified by the filename parameter, reads
+ * its content byte by byte, and writes the binary representation of each byte
+ * to a corresponding text file with the same name but a ".txt" extension.
+ *
+ * @param filename The name of the binary file to be read.
+ */
 void readBinaryFile(const char* filename) {
-    // Open the binary file for reading
+    // Opening Binaryfile to read
     std::ifstream binaryFile(filename, std::ios::binary);
     if (binaryFile.is_open()) {
 
     
 
-    // Open a text file for writing
+    // Opening a text file to write
     std::string strFilename(filename);
     std::string filenameWithoutExtension = strFilename.substr(0, strFilename.find_last_of("."));
     std::ofstream textFile(filenameWithoutExtension + ".txt");
 
-    // std::ofstream textFile(std::string(filename) + ".txt");
+    
     if (textFile.is_open()) {
 
     
 
-    // Variable to store unpacked bits
+    // Variable to store untrackedBits bits
     char untrackedBits;
     // Variable to keep track of the bit position in the unpacked byte
     int bitIndex = 0;
@@ -31,32 +41,16 @@ void readBinaryFile(const char* filename) {
 
             // Write the bit to the text file
             textFile << bit;
-            // std::cout<< bit;
+ 
 
             // Move to the next bit position
             bitIndex++;
 
-            // Output a space for better readability
-            // if (bitIndex % 8 == 0)
-            //     textFile << ' ';
+
             i++;
 
         }
-        // for (int i = 0; i < 8; i++) {
-        //     // Extract the i-th bit from the byte
-        //     char bit = (untrackedBits & (1 << i)) ? '1' : '0';
 
-        //     // Write the bit to the text file
-        //     textFile << bit;
-        //     // std::cout<< bit;
-
-        //     // Move to the next bit position
-        //     bitIndex++;
-
-        //     // Output a space for better readability
-        //     // if (bitIndex % 8 == 0)
-        //     //     textFile << ' ';
-        // }
     }
     }
     else{
@@ -78,7 +72,17 @@ void readBinaryFile(const char* filename) {
     
 }
 
-//plag
+/**
+ * @brief Add two binary strings represented as std::strings.
+ *
+ * This function takes two binary strings and adds them, returning the result
+ * as a new binary string.
+ *
+ * @param a The first binary string to be added.
+ * @param b The second binary string to be added.
+ * @return The binary string representing the sum of the two input binary strings.
+ */
+
 std::string addBinary(std::string a, std::string b)
 {
     std::string result = "";
@@ -112,7 +116,17 @@ std::string addBinary(std::string a, std::string b)
     return result;
 }
 
-
+/**
+ * @brief Combine two binary files into a single binary file with a delimiter.
+ *
+ * This function reads the contents of two binary files, combines them, and writes
+ * the combined data to a new binary file. A delimiter is added between the data
+ * from the first and second files to mark their separation.
+ *
+ * @param file1Path The path to the first binary file to be combined.
+ * @param file2Path The path to the second binary file to be combined.
+ * @param outputPath The path to the output binary file where the combined data will be written.
+ */
 void combineBinaryFiles(const std::string& file1Path, const std::string& file2Path, const std::string& outputPath) {
     // Read the contents of the first binary file
     std::ifstream file1(file1Path, std::ios::binary | std::ios::ate);
@@ -154,6 +168,20 @@ void combineBinaryFiles(const std::string& file1Path, const std::string& file2Pa
     outputFile.close();
 }
 
+
+/**
+ * @brief Separate a combined binary file into two parts using a delimiter.
+ *
+ * This function reads the contents of a combined binary file, searches for a specified
+ * delimiter, and separates the data into two parts. The separated data is then written
+ * to two output binary files.
+ *
+ * @param inputPath The path to the combined binary file to be separated.
+ * @param output1Path The path to the first output binary file.
+ * @param output2Path The path to the second output binary file.
+ * @param delimiter The delimiter used to split the combined binary file.
+ * @param delimiterSize The size of the delimiter in bytes.
+ */
 void separateBinaryFile(const std::string& inputPath, const std::string& output1Path, const std::string& output2Path, const char delimiter[], size_t delimiterSize) {
     // Read the contents of the combined binary file
     std::ifstream inputFile(inputPath, std::ios::binary | std::ios::ate);
@@ -206,6 +234,17 @@ void separateBinaryFile(const std::string& inputPath, const std::string& output1
     output2File.close();
 }
 
+
+/**
+ * @brief Encode a map of characters and strings into a binary file.
+ *
+ * This function takes a map where characters are associated with their corresponding strings
+ * and encodes it into a binary file. Each entry in the map is written as a key-value pair
+ * with the char as binary data, the string length as binary data, and the string as binary data.
+ *
+ * @param myMap The map to be encoded into a binary file.
+ * @param filename The name of the binary file to which the map will be encoded.
+ */
 void encodeMapToBinaryFile(const std::map<char, std::string>& myMap, const std::string& filename) {
     // Open a binary file for writing
     std::ofstream outFileBin(filename + ".bin", std::ios::binary);
@@ -228,7 +267,15 @@ void encodeMapToBinaryFile(const std::map<char, std::string>& myMap, const std::
 }
 
 
-//decode map using bin file
+/**
+ * @brief Decode a binary file containing key-value pairs into a map.
+ *
+ * This function reads a binary file containing char-string pairs and decodes
+ * it into a map where characters are associated with their corresponding strings.
+ *
+ * @param filename The name of the binary file to be decoded.
+ * @return A map containing characters as keys and their corresponding strings as values.
+ */
 std::map<char, std::string> decodeBinaryFileToMap(const std::string& filename) {
     std::map<char, std::string> myMap;
 
@@ -272,7 +319,7 @@ std::map<char, std::string> decodeBinaryFileToMap(const std::string& filename) {
 }
 
 
-//Plag
+//reversing an vector
 template <typename T>
 void reverseVector(std::vector<T>& vec) {
     size_t start = 0;
@@ -288,7 +335,7 @@ void reverseVector(std::vector<T>& vec) {
     }
 }
 
-
+//Reversing a Map
 std::map<long, char> reverseMap(const std::map<char, long>& originalMap) {
     std::map<long, char> reversedMap;
 
@@ -300,9 +347,126 @@ std::map<long, char> reverseMap(const std::map<char, long>& originalMap) {
 }
 
 
+const int WINDOW_SIZE = 4096;
+
+struct LZ77Tuple {
+    int distance;
+    int length;
+    char character;
+};
+
+/**
+ * @brief Count the frequency of characters in the compressed data.
+ *
+ * This function takes a vector of LZ77 tuples (compressed data) and counts the frequency
+ * of each character, storing the results in a provided frequency array.
+ *
+ * @param compressedData Vector of LZ77 tuples representing compressed data.
+ * @param frequencyArray Pointer to an array where character frequencies will be stored.
+ */
+void countCharacterFrequency(const std::vector<LZ77Tuple>& compressedData, int* frequencyArray) {
+    // Initialize the frequency array to all zeros
+    for (int i = 0; i < 256; i++) {
+        frequencyArray[i] = 0;
+    }
+
+    // Count the frequency of the 3rd element (character) in each tuple
+    for (const LZ77Tuple& tuple : compressedData) {
+        frequencyArray[static_cast<int>(tuple.character)]++;
+    }
+}
 
 
 
+/**
+ * @brief Compress a string using the LZ77 compression algorithm.
+ *
+ * This function takes an input string and compresses it using the LZ77 compression algorithm.
+ * The result is a vector of LZ77 tuples representing the compressed data.
+ *
+ * @param input The input string to be compressed.
+ * @return Vector of LZ77 tuples representing the compressed data.
+ */
+
+std::vector<LZ77Tuple> Compress(const std::string& input) {
+    int inputSize = input.size();
+    int winstart = 0;
+    int current = 0;
+    std::vector<LZ77Tuple> compressedData;
+
+    while (current < inputSize) {
+        int temp = current;
+        int matchLength = 0;
+        int matchPosition = -1;
+
+        for (int i = 1; i <= WINDOW_SIZE && current - i >= 0; ++i) {
+            if (input[current - i] == input[current]) {
+                int j = 0;
+                while (current + j < inputSize && input[current - i + j] == input[current + j]) {
+                    ++j;
+                }
+                if (j > matchLength) {
+                    matchLength = j;
+                    matchPosition = current - i;
+                }
+            }
+        }
+
+        if (matchLength == 0) {
+            // No match found, emit a single character as a tuple
+            compressedData.push_back({0, 0, input[current]});
+            current++;
+        } else {
+            // Emit a (distance, length, next character) tuple
+            int distance = current - matchPosition;
+            compressedData.push_back({distance, matchLength, input[current + matchLength]});
+            current += matchLength + 1;
+        }
+    }
+
+    return compressedData;
+}
+
+
+/**
+ * @brief Decompress LZ77 compressed data into a string.
+ *
+ * This function takes a vector of LZ77 tuples (compressed data) and decompresses it
+ * into the original string using the LZ77 decompression algorithm.
+ *
+ * @param compressedData Vector of LZ77 tuples representing compressed data.
+ * @return The decompressed string.
+ */
+std::string Decompress(const std::vector<LZ77Tuple>& compressedData) {
+    std::string decompressed;
+    for (const LZ77Tuple& tuple : compressedData) {
+        if (tuple.distance == 0) {
+            decompressed += tuple.character;
+        } else {
+            int startIndex = decompressed.size() - tuple.distance;
+            int endIndex = startIndex + tuple.length;
+            for (int i = startIndex; i < endIndex; ++i) {
+                decompressed += decompressed[i];
+            }
+            decompressed += tuple.character;
+        }
+    }
+    return decompressed;
+}
+
+
+
+/**
+ * @brief Generate Huffman codes for characters based on their frequencies.
+ *
+ * This function takes two vectors, one representing the frequencies of characters
+ * (A) and the other representing the characters themselves (B). It calculates
+ * Huffman codes for each character and returns a map of characters to their Huffman codes.
+ *
+ * @param A Vector containing the frequencies of characters.
+ * @param B Vector containing the characters.
+ * @return A map where characters are associated with their corresponding Huffman codes.
+ */ 
 std::map<char, std::string> generateHuffmanCodes(std::vector<long> &A, std::vector<char> &B)
 {
     int n = A.size();
@@ -393,7 +557,14 @@ std::map<char, std::string> generateHuffmanCodes(std::vector<long> &A, std::vect
 
 
 
-//plag
+/**
+ * @brief Deflate a file using Huffman coding.
+ *
+ * This function takes an input file, calculates the frequency of each character,
+ * generates Huffman codes, and writes the compressed data to an output binary file.
+ *
+ * @param filename The name of the file to be deflated.
+ */
 
 void deflate(std::string filename){
 
@@ -412,7 +583,7 @@ void deflate(std::string filename){
    
 
     char ch;
-
+    //calculating the frequency
     while (inputFile.get(ch))
     {
         frequency[ch]++;
@@ -434,7 +605,7 @@ void deflate(std::string filename){
         sortedOnBasisOfFrequency.insert(std::make_pair(pair.second, pair.first));
     }
 
-   
+    //Stores the frequency in Increasing order
     std::string strFilename(filename);
     for (auto it = sortedOnBasisOfFrequency.begin(); it != sortedOnBasisOfFrequency.end(); ++it)
     {
@@ -443,10 +614,12 @@ void deflate(std::string filename){
     }
     std::string filenameWithoutExtension = strFilename.substr(0, strFilename.find_last_of("."));
 
+
+    //genrates the huffman codes corrosponsding to the charachter
     charWithHuffmanCodes = generateHuffmanCodes(frequencyIncreasing, charAccordingToFreq);
 
     
-    // std::ifstream decodeFile(filename);
+    
 
     if (decodeFile.is_open())
     {
@@ -454,8 +627,7 @@ void deflate(std::string filename){
     char c;
 
 
-    // std::ofstream output("HCoutput.txt", std::ios::out | std::ios::trunc);
-
+ 
     
     
     std::ofstream output(filenameWithoutExtension + ".bin", std::ios::binary);
@@ -467,7 +639,7 @@ void deflate(std::string filename){
         char packedBits = 0, k;
         // Variable to keep track of the bit position in the packed byte
         int bitIndex = 0;
-        // ofstream outputStream("exoutput.txt");
+        
         while (decodeFile.get(c))
         {
             for(int i=0 ; i<charWithHuffmanCodes[c].size(); i++){
@@ -490,13 +662,13 @@ void deflate(std::string filename){
             }
 
             }
-            // outputStream << c;
+ 
         }
 
         if (bitIndex > 0) {
         output.write(&packedBits, sizeof(char));
     }
-        // outputStream.close();
+
 
     }
     else
@@ -522,7 +694,17 @@ void deflate(std::string filename){
 
 
 
-
+/**
+ * @brief Inflate a file using Huffman coding.
+ *
+ * This function takes a compressed file encoded with Huffman coding, a map
+ * representing the Huffman codes, and the name of the output file. It decodes
+ * the compressed file and writes the decompressed data to the output file.
+ *
+ * @param filename The name of the compressed file to be inflated.
+ * @param result A map containing Huffman codes and their corresponding characters.
+ * @param opFileName The name of the output file where the decompressed data will be written.
+ */
 void inflate(std::string filename, std::map<char, std::string> result, std::string opFileName){
     // Create a new map with reversed key-value pairs
     std::map<std::string, char> reverseValue;
@@ -539,7 +721,7 @@ void inflate(std::string filename, std::map<char, std::string> result, std::stri
     std::string filenameWithoutExtension = strFilename.substr(0, strFilename.find_last_of("."));
     std::string filePath = "clientDatabase/";
     std::ofstream hufmanoutput(filePath + opFileName);
-    // std::ofstream hufmanoutput("HDoutput.txt");
+ 
     if (!hufmanoutput.is_open())
     {
         std::cout << "Error huffman output is not open.";
