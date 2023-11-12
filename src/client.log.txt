@@ -1,1 +1,4353 @@
-[ERROR] TFTP Client : Invalid Request Type { READ | WRITE | DELETE | LS }
+[LOG] Socket timeout set successfully
+[LOG] : WRQ request packet send to server 16777343
+[LOG] : sent WRQ packet
+Received packet
+[LOG] : server port no. indentified
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 512
+[LOG] : DATA packet send to server 16777343
+Received packet
+[LOG] : Source Verified
+Recieved Opcode:4
+[LOG] : Opcode Verified
+Read Bytes: 4
+ACK recieved
+[LOG] : ACK Verified
+Data Size: 343
+[LOG] : DATA packet send to server 16777343
+[LOG] : File recieved Successfuly.
+exiting
