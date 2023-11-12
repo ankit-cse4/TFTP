@@ -206,7 +206,7 @@ void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename
 void TFTPServer::sendACK(int clientSocket, uint16_t blockNumber, struct sockaddr_in clientAddress) {
     uint8_t packet[4];
     TFTPPacket::createACKPacket(packet, blockNumber);
-    if (sendto(clientSocket, packet, TFTP_OPCODE_ACK, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress)) < 0) {
+    if (sendto(clientSocket, packet, sizeof(packet), 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress)) < 0) {
         std::cerr << "[ERROR] : fail to send ACK packet" << std::endl;
         return;
     }
@@ -236,6 +236,7 @@ void TFTPServer::handleClientThread(int serverThreadSocket, const std::string& f
     }
     else if (opcode == TFTP_OPCODE_LS) {
         // handle the list files
+        handleLSRequest(serverThreadSocket, clientAddress, clientId, files);
     }
     else {
         // Send an error packet (Illegal TFTP operation - Error Code 4)
@@ -353,26 +354,46 @@ void TFTPServer::start() {
         opcode = ntohs(opcode);
         std::cerr << "Opcode:" << opcode << std::endl;
 
-
-        // Handle RRQ request (Opcode 1)
-        if (opcode == TFTP_OPCODE_RRQ || opcode == TFTP_OPCODE_WRQ || opcode == TFTP_OPCODE_DELETE) {
+        if (opcode == TFTP_OPCODE_LS)
+        {
             int clientId = 9800 + nextClientId++;
+            std::string filename;
+            clientThreads[clientId] = std::make_tuple(std::thread([this, clientId, clientAddress, buffer, bytesRead, filename, opcode] {
+                 int serverThreadSocket = socket(AF_INET, SOCK_DGRAM, 0);
+                struct sockaddr_in serverThreadSocketAddr;
+                serverThreadSocketAddr.sin_family = AF_INET;
+                serverThreadSocketAddr.sin_port = htons(clientId);
+                serverThreadSocketAddr.sin_addr.s_addr = inet_addr("127.0.0.1");   // INADDR_ANY;
+                if (bind(serverThreadSocket, (struct sockaddr*)&serverThreadSocketAddr, sizeof(serverThreadSocketAddr)) < 0) {
+                    std::cerr << "Error binding server socket" << std::endl;
+                    exit(1);
+                }
+                std::cout << "Server binded to port " << clientId << std::endl;
+                handleClientThread(serverThreadSocket, filename, clientAddress, clientId, opcode, clientThreads, files);
+                
+            }), false);
+
+        }
+        // Handle RRQ request (Opcode 1)
+        else if (opcode == TFTP_OPCODE_RRQ || opcode == TFTP_OPCODE_WRQ || opcode == TFTP_OPCODE_DELETE) {
+            int clientId = 9800 + nextClientId++;
+            std::cerr << "buffer read: " << buffer << std::endl;
             std::string filename(buffer + 2);
             std::cerr << "filename:" << filename << std::endl;
-            if (opcode != TFTP_OPCODE_DELETE){   
-                std::string mode(buffer + 2 + filename.length() + 1);
-                std::cerr << "mode:" << mode << std::endl;
-                std::cerr << "Starting client thread" << std::endl;
-                for (int i = 0; mode[i] != '\0'; i++) {
-                    mode[i] = std::tolower(mode[i]);
-                }
-                if (mode != "octet"){
-                    // Send an error packet (File not found - Error Code 1)
-                    const std::string errorMessage = "Illegal TFTP operation";
-                    sendError(serverSocket, ERROR_ILLEGAL_TFTP_OPERATION, errorMessage, clientAddress);
-                    continue;
-                }
+               
+            std::string mode(buffer + 2 + filename.length() + 1);
+            std::cerr << "mode:" << mode << std::endl;
+            std::cerr << "Starting client thread" << std::endl;
+            for (int i = 0; mode[i] != '\0'; i++) {
+                mode[i] = std::tolower(mode[i]);
             }
+            if (mode != "octet"){
+                // Send an error packet (File not found - Error Code 1)
+                const std::string errorMessage = "Illegal TFTP operation";
+                sendError(serverSocket, ERROR_ILLEGAL_TFTP_OPERATION, errorMessage, clientAddress);
+                continue;
+            }
+            
             clientThreads[clientId] = std::make_tuple(std::thread([this, clientId, clientAddress, buffer, bytesRead, filename, opcode] {
                  int serverThreadSocket = socket(AF_INET, SOCK_DGRAM, 0);
                 struct sockaddr_in serverThreadSocketAddr;
@@ -472,7 +493,7 @@ void TFTPServer::handleDeleteRequest(int clientSocket, const std::string& filena
         sendError(clientSocket, ERROR_FILE_NOT_FOUND, errorMessage, clientAddress);
         return;
     }
-    else if (canDelete(filename, files)) {
+    else if (!canDelete(filename, files)) {
         //send error regarding active readers. cannot delete file.
         const std::string errorMessage = "File has active readers. Cannot delete file.";
         sendError(clientSocket, ERROR_NOT_DEFINED, errorMessage, clientAddress);
@@ -487,6 +508,7 @@ void TFTPServer::handleDeleteRequest(int clientSocket, const std::string& filena
             std::cout << "File deleted successfully.\n";
             // send ack that file deleted succesfully.
             sendACK(clientSocket, ACK_OK, clientAddress);
+            return;
         } else {
             const std::string errorMessage = "File not found";
             sendError(clientSocket, ERROR_FILE_NOT_FOUND, errorMessage, clientAddress);
@@ -500,6 +522,89 @@ void TFTPServer::handleDeleteRequest(int clientSocket, const std::string& filena
     }
 }
 
+void TFTPServer::handleLSRequest(int clientSocket, struct sockaddr_in clientAddress,  int clientId, std::map<std::string, int>& files) {
+    std::string filepath = "serverDatabase/ls.txt";
+    std::ofstream outputFile(filepath, std::ios::binary);
+    if (!outputFile) {
+        std::cerr << "Error creating the file." << std::endl;
+        return;
+    }
+    for (const auto& pair : files) {
+        outputFile << pair.first << "\t [Active Readers] : " << pair.second << "\n";
+    }
+    outputFile.close();
+    std::cerr << "[LOG] << ls.txt created and updated successfully." << std::endl;
+    // std::ifstream file(filepath, std::ios::binary);
+    // if (!file.is_open()) {
+    //     std::cerr << "Error opening the LS file." << std::endl;
+    //     return;
+    // }
+    uint16_t blockNumber = 1;
+    int retry = MAX_RETRY;
+    std::ifstream file(filepath, std::ios::binary);
+    while (retry)
+    {
+        char dataBuffer[512];
+        uint8_t packet[516];
+        memset(packet, 0, sizeof(packet));
+        memset(dataBuffer, 0, 512);
+        size_t dataSize = file.gcount();
+        dataSize = TFTPPacket::readDataBlock(filepath, blockNumber, dataBuffer, dataSize);
+        std::cerr << "data of size: " << dataSize << " read successfully. " << dataBuffer << std::endl;
+        if (dataSize == 0) {
+                std::cerr << "datasize = 0" << std::endl;
+                break; // End of file
+        }
+        std::cerr << "Data Size: " << dataSize << std::endl;
+        TFTPPacket::createDataPacket(packet, blockNumber, dataBuffer, dataSize);
+        std::cerr << "Data packet created" << std::endl;
+        if (sendto(clientSocket, packet, dataSize + 4, 0, (struct sockaddr*)&clientAddress, sizeof(clientAddress)) < 0) {
+            std::cerr << "[ERROR] : fail to send Data packet" << std::endl;
+            return;
+        }
+        std::cerr << "[LOG] : Data packet send to client " << clientAddress.sin_addr.s_addr << std::endl;
+        char ackBuffer[4];
+        int ackSize = recvfrom(clientSocket, ackBuffer, sizeof(ackBuffer), 0, nullptr, nullptr);
+        if (ackSize < 0) {
+            std::cerr << "TIMEOUT Occured" << std::endl;
+            retry--;
+            continue;
+        }
+        else if (ackSize > MAX_PACKET_SIZE) {
+            std::cerr << "Invalid acknowledgment received" << std::endl;
+            const std::string errorMessage = "Illegal TFTP operation";
+            sendError(clientSocket, ERROR_ACCESS_VIOLATION, errorMessage, clientAddress);
+            break;
+        }
+        else {
+            retry = MAX_RETRY;
+        }
+        std::cerr << "Acknoledment recieved" <<std::endl;
+        // Check the received acknowledgment packet (Opcode 4)
+        uint16_t ackOpcode = (ackBuffer[0] << 8) | ackBuffer[1];
+        uint16_t ackBlockNumber = (ackBuffer[2] << 8) | ackBuffer[3];
+        if (ackOpcode != 4 || ackBlockNumber != blockNumber) {
+            std::cerr << "Invalid acknowledgment received" << std::endl;
+            // const std::string errorMessage = "Illegal TFTP operation";
+            // sendError(clientSocket, ERROR_ACCESS_VIOLATION, errorMessage, clientAddress);
+            continue;
+        }
+        std::cerr<< "Correct ACK packet recieved for blocknumber: " << ackBlockNumber << std::endl;
+
+        if(dataSize < 512) {
+            break;
+        }
+
+        ++blockNumber;
+    
+    }
+    if (!retry)
+    {
+        std::cerr << "Max retry for receiving timeout exceeded. Shutting down server" << std::endl;
+    }
+
+}
+
 int main() {
     std :: cout << "starting the server" << std::endl;
     TFTPServer server(54534);
@@ -510,3 +615,4 @@ int main() {
     std :: cout << "server is started" << std::endl;
     return 0;
 }
+
