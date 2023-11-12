@@ -15,7 +15,7 @@ TFTPServer::TFTPServer(int port) : port(port), nextClientId(1) {
 
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_addr.s_addr = inet_addr("127.0.0.1");
-    serverAddress.sin_port = htons(port);
+    serverAddress.sin_port = htons(69);
     if (bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) < 0) {
         std::cerr << "Error binding server socket" << std::endl;
         exit(1);
@@ -108,6 +108,7 @@ void TFTPServer::handleWriteRequest(int clientSocket, const std::string& filenam
         expectedBlockNumber++;
         if(dataLength < 512) {
             std::cerr << "File recieved Successfuly." << std::endl;
+            files.insert(std::make_pair(filename, 0));
             break;
         }
     }
@@ -141,7 +142,11 @@ void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename
         sendError(clientSocket, ERROR_FILE_NOT_FOUND, errorMessage, clientAddress);
         return;
     }
-
+    int readers = files[filename];
+    readers++;
+    auto it = files.find(filename);
+    files.erase(it);
+    files.insert(std::make_pair(filename, readers));
     // Read and send data in blocks of 512 bytes
     uint16_t blockNumber = 1;
     char dataBuffer[512];
@@ -200,6 +205,11 @@ void TFTPServer::handleReadRequest(int clientSocket, const std::string& filename
     {
         std::cerr << "Max retry for receiving timeout exceeded. Shutting down server" << std::endl;
     }
+    readers = files[filename];
+    readers--;
+    auto iter = files.find(filename);
+    files.erase(iter);
+    files.insert(std::make_pair(filename, readers));
 }
 
 
@@ -506,6 +516,8 @@ void TFTPServer::handleDeleteRequest(int clientSocket, const std::string& filena
         if (fs::exists(filePath)) {
             fs::remove(filePath);
             std::cout << "File deleted successfully.\n";
+            auto it = files.find(filename);
+            files.erase(it);
             // send ack that file deleted succesfully.
             sendACK(clientSocket, ACK_OK, clientAddress);
             return;
