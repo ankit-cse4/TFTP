@@ -1,0 +1,143 @@
+Initializing files in the File Map
+[LOG]: destroy client thread started
+Initialized files in the map
+Server is started and waiting to recieve data
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+completed received data
+Opcode:2
+buffer read: 
+filename:TFTPClientcompress.bin
+mode:octet
+Starting client thread
+start receiving data
+TFTPClientcompress.bin does not exists in the server database
+[LOG] : ACK packet send to client 16777343 with Block Number: 0
+Recieved Opcode:3
+Recieved Block Number:1
+Read Bytes: 516
+Copying data memory
+Recieved data size: 512
+Writing data in file
+[LOG] : ACK packet send to client 16777343 with Block Number: 1
+Recieved Opcode:3
+Recieved Block Number:2
+Read Bytes: 516
+Copying data memory
+Recieved data size: 512
+Writing data in file
+[LOG] : ACK packet send to client 16777343 with Block Number: 2
+Recieved Opcode:3
+Recieved Block Number:3
+Read Bytes: 516
+Copying data memory
+Recieved data size: 512
+Writing data in file
+[LOG] : ACK packet send to client 16777343 with Block Number: 3
+Recieved Opcode:3
+Recieved Block Number:4
+Read Bytes: 516
+Copying data memory
+Recieved data size: 512
+Writing data in file
+[LOG] : ACK packet send to client 16777343 with Block Number: 4
+Recieved Opcode:3
+Recieved Block Number:5
+Read Bytes: 172
+Copying data memory
+Recieved data size: 168
+Writing data in file
+[LOG] : ACK packet send to client 16777343 with Block Number: 5
+File recieved Successfuly.
+[LOG]: Thread work completed. Can be Destroyed
+ joined Thread ID: 9801
+Removed the thread id from Map: 9801
+Timeout Occured while listening
+start receiving data
+completed received data
+Opcode:1
+buffer read: 
+filename:TFTPClientcompress.bin
+mode:octet
+Starting client thread
+start receiving data
+TFTPClientcompress.bin exists in the server database
+Data Size: 512
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 512
+Acknoledment recieved
+Correct ACK packet recieved for blocknumber: 1
+Data Size: 512
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 512
+Acknoledment recieved
+Correct ACK packet recieved for blocknumber: 2
+Data Size: 512
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 512
+Acknoledment recieved
+Correct ACK packet recieved for blocknumber: 3
+Data Size: 512
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 512
+Acknoledment recieved
+Correct ACK packet recieved for blocknumber: 4
+Data Size: 168
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 168
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 168
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 168
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 168
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Max retry for receiving timeout exceeded. Shutting down server
+[LOG]: Thread work completed. Can be Destroyed
+Timeout Occured while listening
+start receiving data
+ joined Thread ID: 9802
+Removed the thread id from Map: 9802
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+Shutting Down Server....
+All threads joined
+All threads joined
+destroy threads thread joined
+Server shut down process completed

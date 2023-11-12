@@ -1,7 +1,21 @@
 #include "TFTPClient.h"
+#include "TFTPCompression.h"
 #include <iostream>
 #include <cstring>
 #include <unistd.h>
+
+
+// using namespace std;
+
+
+// to solve store result of huffman encode in  binary format and then make changes in decode function 
+// how to store map 
+
+
+//plag
+
+
+
 
 TFTPClient::TFTPClient(const std::string& serverIP) {
     clientSocket = socket(AF_INET, SOCK_DGRAM, 0);
@@ -71,7 +85,7 @@ void TFTPClient::startClient(int opcode, const std::string& filename) {
     struct sockaddr_in serverAddress;
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_addr.s_addr = inet_addr("127.0.0.1");
-    serverAddress.sin_port = htons(54534);
+    serverAddress.sin_port = htons(69);
 
     // implemented logic for handling client according to opcode
     switch (opcode)
@@ -121,21 +135,24 @@ void TFTPClient::startClient(int opcode, const std::string& filename) {
     return;
 }
 
-bool TFTPClient::handleRRQRequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename) {
-    if (filename.empty())
+bool TFTPClient::handleRRQRequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& prevFilename) {
+    if (prevFilename.empty())
     {
         std::cerr << "[ERROR] : filename is empty" << std::endl;
         return false;
     }
+    std::string strFilename(prevFilename);
+    std::string filenameWithoutExtension = strFilename.substr(0, strFilename.find_last_of("."));
+    std::string filename = filenameWithoutExtension + "compress.bin";
     if (!sendRRQPacket(clientSocket, serverAddress, filename))
     {
         std::cerr << "[ERROR] : fail to send RRQ packet" << std::endl;
         return false;
     }
     std::cerr << "[LOG] : sent RRQ packet" << std::endl;
-    std::string directory = "clientDatabase/";
-    std::string filePath = directory + filename;
-    std::ofstream file(filePath, std::ios::binary);
+    // std::string directory = "clientDatabase/";
+    // std::string filePath = directory + filename;
+    std::ofstream file(filename, std::ios::binary);
     if (!file) {
         // Send an error packet (Disk full or allocation exceeded - Error Code 3)
         std::cerr << "[ERROR] : Cannot create file" << std::endl;
@@ -221,6 +238,7 @@ bool TFTPClient::handleRRQRequest(int clientSocket, struct sockaddr_in serverAdd
         }
         if (recvBlockNumber != expectedBlockNumber)
         {
+            std::cerr << "Block number did no match" << std::endl;
             sendACK(clientSocket, expectedBlockNumber-1, serverAddress);
             continue;
         }
@@ -236,12 +254,29 @@ bool TFTPClient::handleRRQRequest(int clientSocket, struct sockaddr_in serverAdd
             file.close();
             return false;
         }
-        sendACK(clientSocket, expectedBlockNumber, clientAddress);
+        sendACK(clientSocket, recvBlockNumber, clientAddress);
         expectedBlockNumber++;
         if(dataLength < 512) {
             std::cerr << "File recieved Successfuly." << std::endl;
             file.close();
+            std::cerr << "Starting decompression of filename: " << filename << std::endl;
+            const char delimiter[] = {static_cast<char>(0x7F), static_cast<char>(0xFE)};
+            size_t delimiterSize = sizeof(delimiter);
+            separateBinaryFile(filename, "output_file1.bin", "output_file2.bin", delimiter, delimiterSize);
+            std::map<char, std::string> result = decodeBinaryFileToMap("output_file1.bin");
+            std::cerr << "Decompressed file" << std::endl;
+            readBinaryFile("output_file2.bin");
             // call decompression function here
+            inflate("output_file2.txt",result, prevFilename);
+            std::string myStringArray[4] = {"output_file1.bin", "output_file2.bin", "output_file2.txt", "encoded_data.bin"};
+            for (int i = 0; i < 4; i++)
+            {
+                if (fs::exists(myStringArray[i])) {
+                    fs::remove(myStringArray[i]);
+                }
+            }
+            std::cerr << "[DEBUG] : removed unnecessory files" << std::endl;
+
             return true;
         }
         
@@ -273,12 +308,19 @@ bool TFTPClient::sendRRQPacket(int clientSocket, struct sockaddr_in serverAddres
     return true;
 }
 
-bool TFTPClient::handleWRQRequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& filename) {
-    if (filename.empty())
+bool TFTPClient::handleWRQRequest(int clientSocket, struct sockaddr_in serverAddress, const std::string& prevFilename) {
+    if (prevFilename.empty())
     {
         std::cerr << "[ERROR] : filename is empty" << std::endl;
         return false;
     }
+    // std::string path = "clientDatabase/";
+    // std::string newFilePath = path + prevFilename;
+    deflate(prevFilename);
+    std::cerr << "File compressed" << std::endl;
+    std::string strFilename(prevFilename);
+    std::string filenameWithoutExtension = strFilename.substr(0, strFilename.find_last_of("."));
+    std::string filename = filenameWithoutExtension + "compress.bin";
     if (!sendWRQPacket(clientSocket, serverAddress, filename))
     {
         std::cerr << "[ERROR] : fail to send WRQ packet" << std::endl;
@@ -290,9 +332,9 @@ bool TFTPClient::handleWRQRequest(int clientSocket, struct sockaddr_in serverAdd
     uint16_t expectedBlockNumber = 0;
     int retry = MAX_RETRY;
     bool initialPacket = true;
-    std::string directory = "clientDatabase/";
-    std::string filePath = directory + filename;
-    std::ifstream file(filePath, std::ios::binary);
+    // std::string directory = "clientDatabase/";
+    // std::string filePath = directory + filename;
+    std::ifstream file(filename, std::ios::binary);
     if (!file) {
         // Send an error packet (Disk full or allocation exceeded - Error Code 3)
         std::cerr << "[ERROR] : Cannot create file" << std::endl;
@@ -395,7 +437,7 @@ bool TFTPClient::handleWRQRequest(int clientSocket, struct sockaddr_in serverAdd
         memset(packet, 0, sizeof(packet));
         memset(dataBuffer, 0, 512);
         size_t dataSize = file.gcount();
-        dataSize = TFTPPacket::readDataBlock(filePath, expectedBlockNumber, dataBuffer, dataSize);
+        dataSize = TFTPPacket::readDataBlock(filename, expectedBlockNumber, dataBuffer, dataSize);
         if (dataSize == 0) {
             break; // End of file
         }
@@ -643,11 +685,19 @@ bool TFTPClient::handleLSRequest(int clientSocket, struct sockaddr_in serverAddr
 void TFTPClient::sendACK(int clientSocket, uint16_t blockNumber, struct sockaddr_in serverAddress) {
     uint8_t packet[4];
     TFTPPacket::createACKPacket(packet, blockNumber);
-    if (sendto(clientSocket, packet, 4, 0, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) < 0) {
-        std::cerr << "[ERROR] : fail to send ACK packet" << std::endl;
+    int retry = 5;
+    while (retry)
+    {
+        if (sendto(clientSocket, packet, 4, 0, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) < 0) {
+            std::cerr << "[ERROR] : fail to send ACK packet. Retryinggg" << std::endl;
+            retry--;
+            continue;
+        }
+        std::cerr << "[LOG] : ACK packet send to client " << serverAddress.sin_addr.s_addr << " with Block Number: " << blockNumber << std::endl;
         return;
+        /* code */
     }
-    std::cerr << "[LOG] : ACK packet send to client " << serverAddress.sin_addr.s_addr << " with Block Number: " << blockNumber << std::endl;
+    
 }
 
 int main(int argc, char* argv[]){
