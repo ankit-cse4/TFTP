@@ -1,0 +1,36 @@
+cmake_minimum_required(VERSION 3.1)
+project(gtest VERSION 1.0 LANGUAGES C CXX)
+
+find_package(GTest REQUIRED)
+find_package (Threads)
+
+set(TEST_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
+set(CODE_SRC_DIR "${TEST_SRC_DIR}/../src")
+set(OUTPUT_DIR "${CMAKE_CURRENT_BINARY_DIR}")
+
+#include_directories(CODE_SRC_DIR)
+
+# Specify the directories where to find header files
+
+
+set(SOURCES
+    ${CODE_SRC_DIR}/TFTPPacket.h
+    ${CODE_SRC_DIR}/TFTPPacket.cpp
+)
+
+add_executable(${PROJECT_NAME} 
+            ${SOURCES}  
+            "${TEST_SRC_DIR}/Tester.cpp"
+            "${TEST_SRC_DIR}/main.cpp")
+            
+target_include_directories(${PROJECT_NAME} PRIVATE ${CODE_SRC_DIR})
+target_include_directories(${PROJECT_NAME} PRIVATE ${CODE_INCLUED_DIR})
+target_include_directories(${PROJECT_NAME} PRIVATE "${OUTPUT_DIR}")
+target_link_libraries(${PROJECT_NAME} Threads::Threads gmock)
+#target_compile_definitions(${PROJECT_NAME} PRIVATE ELPP_THREAD_SAFE ELPP_FRESH_LOG_FILE)
+target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT}) 
+
+file(COPY "testfiles" DESTINATION "${OUTPUT_DIR}")
+
+enable_testing()
+add_test(add ${PROJECT_NAME})
