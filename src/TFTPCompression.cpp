@@ -347,112 +347,112 @@ std::map<long, char> reverseMap(const std::map<char, long>& originalMap) {
 }
 
 
-const int WINDOW_SIZE = 4096;
+// const int WINDOW_SIZE = 4096;
 
-struct LZ77Tuple {
-    int distance;
-    int length;
-    char character;
-};
+// struct LZ77Tuple {
+//     int distance;
+//     int length;
+//     char character;
+// };
 
-/**
- * @brief Count the frequency of characters in the compressed data.
- *
- * This function takes a vector of LZ77 tuples (compressed data) and counts the frequency
- * of each character, storing the results in a provided frequency array.
- *
- * @param compressedData Vector of LZ77 tuples representing compressed data.
- * @param frequencyArray Pointer to an array where character frequencies will be stored.
- */
-void countCharacterFrequency(const std::vector<LZ77Tuple>& compressedData, int* frequencyArray) {
-    // Initialize the frequency array to all zeros
-    for (int i = 0; i < 256; i++) {
-        frequencyArray[i] = 0;
-    }
+// /**
+//  * @brief Count the frequency of characters in the compressed data.
+//  *
+//  * This function takes a vector of LZ77 tuples (compressed data) and counts the frequency
+//  * of each character, storing the results in a provided frequency array.
+//  *
+//  * @param compressedData Vector of LZ77 tuples representing compressed data.
+//  * @param frequencyArray Pointer to an array where character frequencies will be stored.
+//  */
+// void countCharacterFrequency(const std::vector<LZ77Tuple>& compressedData, int* frequencyArray) {
+//     // Initialize the frequency array to all zeros
+//     for (int i = 0; i < 256; i++) {
+//         frequencyArray[i] = 0;
+//     }
 
-    // Count the frequency of the 3rd element (character) in each tuple
-    for (const LZ77Tuple& tuple : compressedData) {
-        frequencyArray[static_cast<int>(tuple.character)]++;
-    }
-}
-
-
-
-/**
- * @brief Compress a string using the LZ77 compression algorithm.
- *
- * This function takes an input string and compresses it using the LZ77 compression algorithm.
- * The result is a vector of LZ77 tuples representing the compressed data.
- *
- * @param input The input string to be compressed.
- * @return Vector of LZ77 tuples representing the compressed data.
- */
-
-std::vector<LZ77Tuple> Compress(const std::string& input) {
-    int inputSize = input.size();
-    int winstart = 0;
-    int current = 0;
-    std::vector<LZ77Tuple> compressedData;
-
-    while (current < inputSize) {
-        int temp = current;
-        int matchLength = 0;
-        int matchPosition = -1;
-
-        for (int i = 1; i <= WINDOW_SIZE && current - i >= 0; ++i) {
-            if (input[current - i] == input[current]) {
-                int j = 0;
-                while (current + j < inputSize && input[current - i + j] == input[current + j]) {
-                    ++j;
-                }
-                if (j > matchLength) {
-                    matchLength = j;
-                    matchPosition = current - i;
-                }
-            }
-        }
-
-        if (matchLength == 0) {
-            // No match found, emit a single character as a tuple
-            compressedData.push_back({0, 0, input[current]});
-            current++;
-        } else {
-            // Emit a (distance, length, next character) tuple
-            int distance = current - matchPosition;
-            compressedData.push_back({distance, matchLength, input[current + matchLength]});
-            current += matchLength + 1;
-        }
-    }
-
-    return compressedData;
-}
+//     // Count the frequency of the 3rd element (character) in each tuple
+//     for (const LZ77Tuple& tuple : compressedData) {
+//         frequencyArray[static_cast<int>(tuple.character)]++;
+//     }
+// }
 
 
-/**
- * @brief Decompress LZ77 compressed data into a string.
- *
- * This function takes a vector of LZ77 tuples (compressed data) and decompresses it
- * into the original string using the LZ77 decompression algorithm.
- *
- * @param compressedData Vector of LZ77 tuples representing compressed data.
- * @return The decompressed string.
- */
-std::string Decompress(const std::vector<LZ77Tuple>& compressedData) {
-    std::string decompressed;
-    for (const LZ77Tuple& tuple : compressedData) {
-        if (tuple.distance == 0) {
-            decompressed += tuple.character;
-        } else {
-            int startIndex = decompressed.size() - tuple.distance;
-            int endIndex = startIndex + tuple.length;
-            for (int i = startIndex; i < endIndex; ++i) {
-                decompressed += decompressed[i];
-            }
-            decompressed += tuple.character;
-        }
-    }
-    return decompressed;
-}
+
+// /**
+//  * @brief Compress a string using the LZ77 compression algorithm.
+//  *
+//  * This function takes an input string and compresses it using the LZ77 compression algorithm.
+//  * The result is a vector of LZ77 tuples representing the compressed data.
+//  *
+//  * @param input The input string to be compressed.
+//  * @return Vector of LZ77 tuples representing the compressed data.
+//  */
+
+// std::vector<LZ77Tuple> Compress(const std::string& input) {
+//     int inputSize = input.size();
+//     int winstart = 0;
+//     int current = 0;
+//     std::vector<LZ77Tuple> compressedData;
+
+//     while (current < inputSize) {
+//         int temp = current;
+//         int matchLength = 0;
+//         int matchPosition = -1;
+
+//         for (int i = 1; i <= WINDOW_SIZE && current - i >= 0; ++i) {
+//             if (input[current - i] == input[current]) {
+//                 int j = 0;
+//                 while (current + j < inputSize && input[current - i + j] == input[current + j]) {
+//                     ++j;
+//                 }
+//                 if (j > matchLength) {
+//                     matchLength = j;
+//                     matchPosition = current - i;
+//                 }
+//             }
+//         }
+
+//         if (matchLength == 0) {
+//             // No match found, emit a single character as a tuple
+//             compressedData.push_back({0, 0, input[current]});
+//             current++;
+//         } else {
+//             // Emit a (distance, length, next character) tuple
+//             int distance = current - matchPosition;
+//             compressedData.push_back({distance, matchLength, input[current + matchLength]});
+//             current += matchLength + 1;
+//         }
+//     }
+
+//     return compressedData;
+// }
+
+
+// /**
+//  * @brief Decompress LZ77 compressed data into a string.
+//  *
+//  * This function takes a vector of LZ77 tuples (compressed data) and decompresses it
+//  * into the original string using the LZ77 decompression algorithm.
+//  *
+//  * @param compressedData Vector of LZ77 tuples representing compressed data.
+//  * @return The decompressed string.
+//  */
+// std::string Decompress(const std::vector<LZ77Tuple>& compressedData) {
+//     std::string decompressed;
+//     for (const LZ77Tuple& tuple : compressedData) {
+//         if (tuple.distance == 0) {
+//             decompressed += tuple.character;
+//         } else {
+//             int startIndex = decompressed.size() - tuple.distance;
+//             int endIndex = startIndex + tuple.length;
+//             for (int i = startIndex; i < endIndex; ++i) {
+//                 decompressed += decompressed[i];
+//             }
+//             decompressed += tuple.character;
+//         }
+//     }
+//     return decompressed;
+// }
 
 
 
