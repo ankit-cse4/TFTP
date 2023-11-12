@@ -1,0 +1,12 @@
+Initializing files in the File Map
+[LOG]: destroy client thread started
+Initialized files in the map
+FILE NAME: github.txt, READERS: 0
+Server is started and waiting to recieve data
+start receiving data
+Timeout Occured while listening
+Shutting Down Server....
+All threads joined
+All threads joined
+destroy threads thread joined
+Server shut down process completed

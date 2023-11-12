@@ -1,0 +1,1 @@
+[ERROR] TFTP Client : Invalid Request Type { READ | WRITE | DELETE | LS }
