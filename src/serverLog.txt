@@ -1,0 +1,88 @@
+Initializing files in the File Map
+[LOG]: destroy client thread started
+Initialized files in the map
+FILE NAME: TFTPClientcompress.bin, READERS: 0
+FILE NAME: combined_file.bin, READERS: 0
+FILE NAME: error.bin, READERS: 0
+FILE NAME: github.txt, READERS: 0
+FILE NAME: output.bin, READERS: 0
+Server is started and waiting to recieve data
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+Timeout Occured while listening
+start receiving data
+completed received data
+Opcode:1
+buffer read: 
+filename:TFTPClientcompress.bin
+mode:octet
+Starting client thread
+start receiving data
+TFTPClientcompress.bin exists in the server database
+Data Size: 512
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 512
+Acknoledment recieved
+Correct ACK packet recieved for blocknumber: 1
+Data Size: 512
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 512
+Acknoledment recieved
+Correct ACK packet recieved for blocknumber: 2
+Data Size: 512
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 512
+Acknoledment recieved
+Correct ACK packet recieved for blocknumber: 3
+Data Size: 512
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 512
+Acknoledment recieved
+Correct ACK packet recieved for blocknumber: 4
+Data Size: 168
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 168
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 168
+Timeout Occured while listening
+start receiving data
+TIMEOUT Occured
+Data Size: 168
+Timeout Occured while listening
+Shutting Down Server....
+All threads joined
+TIMEOUT Occured
+Data Size: 168
+TIMEOUT Occured
+Max retry for receiving timeout exceeded. Shutting down server
+[LOG]: Thread work completed. Can be Destroyed
+ joined Thread ID: 9801
+Removed the thread id from Map: 9801
+All threads joined
+destroy threads thread joined
+Server shut down process completed
